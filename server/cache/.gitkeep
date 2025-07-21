@@ -1,0 +1,3 @@
+# This file ensures the cache directory is visible in git
+# All cache files (*.json) are ignored by .gitignore
+# The cache directory is automatically populated when the application runs 
