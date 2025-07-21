@@ -1,0 +1,29 @@
+{
+  "name": "ai-researcher-evaluation-tool",
+  "version": "1.0.0",
+  "description": "A comprehensive system for evaluating AI researchers based on education, publications, patents, work experience, and GitHub contributions",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm start",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "test-linkedin": "node tests/testLinkedInEvaluation.js",
+    "test-cv": "node tests/testCVEvaluation.js"
+  },
+  "keywords": [
+    "ai",
+    "researcher",
+    "evaluation",
+    "scoring",
+    "machine-learning",
+    "academic",
+    "publications",
+    "patents"
+  ],
+  "author": "AI Research Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+} 
