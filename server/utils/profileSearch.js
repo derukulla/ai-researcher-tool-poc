@@ -16,52 +16,641 @@ const { SERPAPI_API_KEY: SERPAPI_KEY, PDL_API_KEY } = require('../config/apiKeys
 // People Data Labs API configuration
 const PDL_BASE_URL = 'https://api.peopledatalabs.com/v5/person/enrich';
 
+// =============================================================================
+// PARALLEL PROCESSING FUNCTIONS
+// =============================================================================
+
 /**
- * Fetch LinkedIn profile data using People Data Labs API
- * @param {string} linkedinId - LinkedIn ID (without linkedin.com/in/)
- * @returns {Promise<object>} Profile data from PDL API
+ * Process multiple profiles in parallel with batching and rate limiting
+ * @param {Array} profiles - Array of profile objects
+ * @param {Function} processingFunction - Function to process each profile
+ * @param {object} options - Processing options
+ * @returns {Promise<Array>} Array of results
  */
-async function fetchLinkedInProfile(linkedinId) {
-  console.log(`🔍 Fetching LinkedIn profile: ${linkedinId}`);
+async function processProfilesInParallel(profiles, processingFunction, options = {}) {
+  const {
+    batchSize = 5,  // Process 5 profiles at a time to avoid overwhelming APIs
+    delayBetweenBatches = 2000,  // 2 second delay between batches
+    maxRetries = 2,
+    timeoutPerProfile = 60000  // 60 seconds timeout per profile
+  } = options;
+
+  console.log(`🔄 Processing ${profiles.length} profiles in parallel (batch size: ${batchSize})`);
   
-  try {
-    const response = await axios.get(PDL_BASE_URL, {
-      params: {
-        profile: `linkedin.com/in/${linkedinId}`
-      },
-      headers: {
-        'X-Api-Key': PDL_API_KEY
-      },
-      timeout: 30000 // 30 second timeout
+  const results = [];
+  const errors = [];
+
+  // Process profiles in batches
+  for (let i = 0; i < profiles.length; i += batchSize) {
+    const batch = profiles.slice(i, i + batchSize);
+    const batchNumber = Math.floor(i / batchSize) + 1;
+    const totalBatches = Math.ceil(profiles.length / batchSize);
+    
+    console.log(`📦 Processing batch ${batchNumber}/${totalBatches} (${batch.length} profiles)`);
+    
+    // Process current batch in parallel
+    const batchPromises = batch.map(async (profile, index) => {
+      const globalIndex = i + index;
+      try {
+        // Add timeout to each profile processing
+        const result = await Promise.race([
+          processingFunction(profile, globalIndex),
+          new Promise((_, reject) => 
+            setTimeout(() => reject(new Error('Profile processing timeout')), timeoutPerProfile)
+          )
+        ]);
+        
+        return { success: true, data: result, index: globalIndex, profileId: profile.username || profile.linkedinId || `profile_${globalIndex}` };
+      } catch (error) {
+        console.error(`❌ Error processing profile ${globalIndex}:`, error.message);
+        errors.push({ index: globalIndex, profileId: profile.username || profile.linkedinId || `profile_${globalIndex}`, error: error.message });
+        return { success: false, error: error.message, index: globalIndex, profileId: profile.username || profile.linkedinId || `profile_${globalIndex}` };
+      }
     });
 
-    if (response.data && response.data.status === 200) {
-      console.log(`✅ Successfully fetched profile for: ${linkedinId}`);
+    // Wait for all profiles in current batch to complete
+    const batchResults = await Promise.all(batchPromises);
+    results.push(...batchResults);
+
+    // Add delay between batches (except for the last batch)
+    if (i + batchSize < profiles.length) {
+      console.log(`⏳ Waiting ${delayBetweenBatches}ms before next batch...`);
+      await new Promise(resolve => setTimeout(resolve, delayBetweenBatches));
+    }
+  }
+
+  const successfulResults = results.filter(r => r.success).map(r => r.data);
+  console.log(`✅ Parallel processing complete: ${successfulResults.length}/${profiles.length} successful`);
+  
+  if (errors.length > 0) {
+    console.log(`⚠️ Errors encountered: ${errors.length}`);
+    errors.forEach(error => {
+      console.log(`   - ${error.profileId}: ${error.error}`);
+    });
+  }
+
+  return successfulResults;
+}
+
+/**
+ * Fetch multiple LinkedIn profiles in parallel
+ * @param {Array} profileInfos - Array of profile info objects
+ * @returns {Promise<Array>} Array of successful profile fetches
+ */
+async function fetchLinkedInProfilesParallel(profileInfos) {
+  console.log(`📱 Fetching ${profileInfos.length} LinkedIn profiles in parallel...`);
+  
+  const fetchFunction = async (profileInfo, index) => {
+    const { username } = profileInfo;
+    console.log(`📱 [${index + 1}] Fetching LinkedIn profile: ${username}`);
+    
+    const profileResult = await fetchLinkedInProfile(username);
+    
+    if (!profileResult || !profileResult.success || profileResult.error) {
+      throw new Error(`Failed to fetch LinkedIn profile: ${profileResult?.error || 'Unknown error'}`);
+    }
+
+    const rawProfileData = profileResult.data;
+    if (!rawProfileData) {
+      throw new Error('No LinkedIn data found');
+    }
+
+    const linkedInProfile = formatLinkedInProfile(rawProfileData);
+    const researcherName = linkedInProfile.full_name || 'Unknown Researcher';
+    
+    console.log(`✅ [${index + 1}] LinkedIn profile fetched: ${researcherName}`);
+    
+    return {
+      ...profileInfo,
+      linkedInProfile,
+      researcherName,
+      rawProfileData
+    };
+  };
+
+  return await processProfilesInParallel(profileInfos, fetchFunction, {
+    batchSize: 8,  // LinkedIn API can handle more concurrent requests
+    delayBetweenBatches: 1000  // Shorter delay for LinkedIn fetching
+  });
+}
+
+/**
+ * Parse education for multiple profiles in parallel
+ * @param {Array} profiles - Array of profiles with LinkedIn data
+ * @returns {Promise<Array>} Array of profiles with education data
+ */
+async function parseEducationParallel(profiles) {
+  console.log(`🎓 Parsing education for ${profiles.length} profiles in parallel...`);
+  
+  const parseFunction = async (profile, index) => {
+    console.log(`🎓 [${index + 1}] Parsing education for: ${profile.researcherName}`);
+    
+    const education = await parseEducation(profile.linkedInProfile);
+    
+    // Update researcher name if education parsing found a better name
+    let researcherName = profile.researcherName;
+    if (education.name && education.name !== 'Unknown') {
+      researcherName = education.name;
+    }
+    
+    console.log(`✅ [${index + 1}] Education parsed: ${education.degree || 'N/A'} from ${education.institute || 'N/A'}`);
+    
+    return {
+      ...profile,
+      researcherName,
+      education
+    };
+  };
+
+  return await processProfilesInParallel(profiles, parseFunction);
+}
+
+/**
+ * Parse publications for multiple profiles in parallel
+ * @param {Array} profiles - Array of profiles with education data
+ * @returns {Promise<Array>} Array of profiles with publications data
+ */
+async function parsePublicationsParallel(profiles) {
+  console.log(`📚 Parsing publications for ${profiles.length} profiles in parallel...`);
+  
+  const parseFunction = async (profile, index) => {
+    console.log(`📚 [${index + 1}] Parsing publications for: ${profile.researcherName}`);
+    
+    const publications = await parsePublications({
+      name: profile.researcherName,
+      education: profile.education,
+      profileData: profile.linkedInProfile
+    });
+    
+    console.log(`✅ [${index + 1}] Publications parsed: ${publications.numberOfPublications} papers, ${publications.citations} citations`);
+    
+    return {
+      ...profile,
+      publications
+    };
+  };
+
+  return await processProfilesInParallel(profiles, parseFunction, {
+    batchSize: 3,  // Smaller batches for SerpAPI to avoid rate limits
+    delayBetweenBatches: 3000  // Longer delay for API-heavy operations
+  });
+}
+
+/**
+ * Parse patents for multiple profiles in parallel
+ * @param {Array} profiles - Array of profiles with publications data
+ * @returns {Promise<Array>} Array of profiles with patents data
+ */
+async function parsePatentsParallel(profiles) {
+  console.log(`🔬 Parsing patents for ${profiles.length} profiles in parallel...`);
+  
+  const parseFunction = async (profile, index) => {
+    console.log(`🔬 [${index + 1}] Parsing patents for: ${profile.researcherName}`);
+    
+    const patents = await parsePatents({
+      name: profile.researcherName,
+      education: profile.education,
+      profileData: profile.linkedInProfile
+    });
+    
+    console.log(`✅ [${index + 1}] Patents parsed: ${patents.grantedFirstInventor} granted (first inventor)`);
+    
+    return {
+      ...profile,
+      patents
+    };
+  };
+
+  return await processProfilesInParallel(profiles, parseFunction, {
+    batchSize: 3,  // Smaller batches for SerpAPI
+    delayBetweenBatches: 3000
+  });
+}
+
+/**
+ * Parse GitHub for multiple profiles in parallel
+ * @param {Array} profiles - Array of profiles with patents data
+ * @returns {Promise<Array>} Array of profiles with GitHub data
+ */
+async function parseGitHubParallel(profiles) {
+  console.log(`💻 Parsing GitHub for ${profiles.length} profiles in parallel...`);
+  
+  const parseFunction = async (profile, index) => {
+    console.log(`💻 [${index + 1}] Parsing GitHub for: ${profile.researcherName}`);
+    
+    const gitHubInput = {
+      name: profile.researcherName,
+      education: profile.education,
+      profileData: profile.linkedInProfile
+    };
+    
+    // Add GitHub username from LinkedIn profile if available
+    if (profile.linkedInProfile.github_username) {
+      gitHubInput.githubUsername = profile.linkedInProfile.github_username;
+      console.log(`🔗 [${index + 1}] Using GitHub username from LinkedIn: ${profile.linkedInProfile.github_username}`);
+    }
+    
+    const github = await parseGitHub(gitHubInput);
+    
+    console.log(`✅ [${index + 1}] GitHub parsed: ${github.githubUsername || 'No profile found'}`);
+    
+    return {
+      ...profile,
+      github
+    };
+  };
+
+  return await processProfilesInParallel(profiles, parseFunction, {
+    batchSize: 4,  // GitHub API can handle moderate concurrent requests
+    delayBetweenBatches: 2000
+  });
+}
+
+/**
+ * Parse work experience for multiple profiles in parallel
+ * @param {Array} profiles - Array of profiles with GitHub data
+ * @returns {Promise<Array>} Array of profiles with work experience data
+ */
+async function parseWorkExperienceParallel(profiles) {
+  console.log(`💼 Parsing work experience for ${profiles.length} profiles in parallel...`);
+  
+  const parseFunction = async (profile, index) => {
+    console.log(`💼 [${index + 1}] Parsing work experience for: ${profile.researcherName}`);
+    
+    const workExperience = await parseWorkExperience({
+      name: profile.researcherName,
+      profileData: profile.linkedInProfile,
+      publications: profile.publications.articles,
+      info: profile.publications.author,
+      github: profile.github
+    });
+    
+    console.log(`✅ [${index + 1}] Work experience parsed: top AI orgs: ${workExperience.topAIOrganizations}`);
+    
+    return {
+      ...profile,
+      workExperience
+    };
+  };
+
+  return await processProfilesInParallel(profiles, parseFunction);
+}
+
+// =============================================================================
+// FILTERING FUNCTIONS
+// =============================================================================
+
+/**
+ * Apply education filter to profiles
+ * @param {Array} profiles - Array of profiles with education data
+ * @param {object} filters - Filter criteria
+ * @returns {Array} Filtered profiles
+ */
+function applyEducationFilter(profiles, filters) {
+  console.log(`🎓 Applying education filter to ${profiles.length} profiles...`);
+  
+  const filteredProfiles = profiles.filter(profile => {
+    const passed = checkEducationFilter(profile.education, filters);
+    if (!passed) {
+      console.log(`❌ ${profile.researcherName} (${profile.username}) filtered out: Education doesn't match criteria`);
+    }
+    return passed;
+  });
+  
+  console.log(`✅ Education filter: ${filteredProfiles.length}/${profiles.length} profiles passed`);
+  return filteredProfiles;
+}
+
+/**
+ * Apply publications filter to profiles
+ * @param {Array} profiles - Array of profiles with publications data
+ * @param {object} filters - Filter criteria
+ * @returns {Array} Filtered profiles
+ */
+function applyPublicationsFilter(profiles, filters) {
+  console.log(`📚 Applying publications filter to ${profiles.length} profiles...`);
+  
+  const filteredProfiles = profiles.filter(profile => {
+    const passed = checkPublicationsFilter(profile.publications, filters);
+    if (!passed) {
+      console.log(`❌ ${profile.researcherName} (${profile.username}) filtered out: Publications don't match criteria`);
+    }
+    return passed;
+  });
+  
+  console.log(`✅ Publications filter: ${filteredProfiles.length}/${profiles.length} profiles passed`);
+  return filteredProfiles;
+}
+
+/**
+ * Apply patents filter to profiles
+ * @param {Array} profiles - Array of profiles with patents data
+ * @param {object} filters - Filter criteria
+ * @returns {Array} Filtered profiles
+ */
+function applyPatentsFilter(profiles, filters) {
+  console.log(`🔬 Applying patents filter to ${profiles.length} profiles...`);
+  
+  const filteredProfiles = profiles.filter(profile => {
+    const passed = checkPatentsFilter(profile.patents, filters);
+    if (!passed) {
+      console.log(`❌ ${profile.researcherName} (${profile.username}) filtered out: Patents don't match criteria`);
+    }
+    return passed;
+  });
+  
+  console.log(`✅ Patents filter: ${filteredProfiles.length}/${profiles.length} profiles passed`);
+  return filteredProfiles;
+}
+
+/**
+ * Apply GitHub filter to profiles
+ * @param {Array} profiles - Array of profiles with GitHub data
+ * @param {object} filters - Filter criteria
+ * @returns {Array} Filtered profiles
+ */
+function applyGitHubFilter(profiles, filters) {
+  console.log(`💻 Applying GitHub filter to ${profiles.length} profiles...`);
+  
+  const filteredProfiles = profiles.filter(profile => {
+    const passed = checkGitHubFilter(profile.github, filters);
+    if (!passed) {
+      console.log(`❌ ${profile.researcherName} (${profile.username}) filtered out: GitHub doesn't match criteria`);
+    }
+    return passed;
+  });
+  
+  console.log(`✅ GitHub filter: ${filteredProfiles.length}/${profiles.length} profiles passed`);
+  return filteredProfiles;
+}
+
+/**
+ * Apply work experience filter to profiles
+ * @param {Array} profiles - Array of profiles with work experience data
+ * @param {object} filters - Filter criteria
+ * @returns {Array} Filtered profiles
+ */
+function applyWorkExperienceFilter(profiles, filters) {
+  console.log(`💼 Applying work experience filter to ${profiles.length} profiles...`);
+  
+  const filteredProfiles = profiles.filter(profile => {
+    const passed = checkExperienceFilter(profile.workExperience, filters);
+    if (!passed) {
+      console.log(`❌ ${profile.researcherName} (${profile.username}) filtered out: Work experience doesn't match criteria`);
+    }
+    return passed;
+  });
+  
+  console.log(`✅ Work experience filter: ${filteredProfiles.length}/${profiles.length} profiles passed`);
+  return filteredProfiles;
+}
+
+// =============================================================================
+// MAIN PARALLEL PROCESSING FUNCTION
+// =============================================================================
+
+/**
+ * Main profile search function with parallel processing
+ * @param {object} filters - All filter criteria from UI
+ * @param {object} options - Search options
+ * @returns {Promise<object>} Search results
+ */
+async function profileSearchParallel(filters, options = {}) {
+  const {
+    maxProfiles = 20,
+    maxSearchResults = 50,
+    skipCachedProfiles = false
+  } = options;
+  
+  const startTime = Date.now();
+  
+  try {
+    console.log('🚀 Starting PARALLEL profile search with filters:', filters);
+    console.log('⚡ Using parallel processing for maximum speed!');
+    
+    // Step 1: Search for LinkedIn profiles using SerpAPI
+    const linkedInProfiles = await searchLinkedInProfiles(filters, maxSearchResults);
+    
+    if (linkedInProfiles.length === 0) {
       return {
-        linkedinId,
         success: true,
-        rawData: response.data,
-        data: response.data.data,
-        error: null
-      };
-    } else {
-      console.log(`⚠️ Profile not found for: ${linkedinId}`);
-      return {
-        linkedinId,
-        success: false,
-        rawData: null,
-        data: null,
-        error: 'Profile not found'
+        profiles: [],
+        summary: {
+          searchResults: 0,
+          profilesProcessed: 0,
+          profilesPassed: 0,
+          processingTime: Date.now() - startTime
+        }
       };
     }
-  } catch (error) {
-    console.error(`❌ Error fetching profile for ${linkedinId}:`, error.message);
+    
+    const maxToProcess = Math.min(linkedInProfiles.length, maxProfiles * 3);
+    const profilesToProcess = linkedInProfiles.slice(0, maxToProcess);
+    
+    console.log(`📋 Processing ${profilesToProcess.length} profiles with PARALLEL parsing...`);
+    
+    let currentProfiles = profilesToProcess;
+    let stageStartTime = Date.now();
+    
+    // Stage 1: Fetch LinkedIn profiles in parallel
+    console.log(`\n🏁 STAGE 1: Fetching LinkedIn profiles...`);
+    currentProfiles = await fetchLinkedInProfilesParallel(currentProfiles);
+    console.log(`⏱️ Stage 1 completed in ${Math.round((Date.now() - stageStartTime) / 1000)}s`);
+    
+    if (currentProfiles.length === 0) {
+      console.log('❌ No LinkedIn profiles could be fetched');
+      return {
+        success: true,
+        profiles: [],
+        summary: {
+          searchResults: linkedInProfiles.length,
+          profilesProcessed: profilesToProcess.length,
+          profilesPassed: 0,
+          processingTime: Date.now() - startTime,
+          stageResults: {
+            linkedInFetched: profilesWithEducation.length,
+            educationPassed: 0
+          }
+        }
+      };
+    }
+    
+    // Stage 2: Parse education in parallel → Apply education filter
+    console.log(`\n🏁 STAGE 2: Education parsing and filtering...`);
+    stageStartTime = Date.now();
+    let profilesWithEducation = await parseEducationParallel(currentProfiles);
+    currentProfiles = applyEducationFilter(profilesWithEducation, filters);
+    console.log(`⏱️ Stage 2 completed in ${Math.round((Date.now() - stageStartTime) / 1000)}s`);
+    
+    if (currentProfiles.length === 0) {
+      console.log('❌ No profiles passed education filter');
+      return {
+        success: true,
+        profiles: [],
+        summary: {
+          searchResults: linkedInProfiles.length,
+          profilesProcessed: profilesToProcess.length,
+          profilesPassed: 0,
+          processingTime: Date.now() - startTime,
+          stageResults: {
+            linkedInFetched: profilesWithEducation.length,
+            educationPassed: 0
+          }
+        }
+      };
+    }
+    
+    // Stage 3: Parse publications in parallel → Apply publications filter
+    console.log(`\n🏁 STAGE 3: Publications parsing and filtering...`);
+    stageStartTime = Date.now();
+    let profilesWithPublications = await parsePublicationsParallel(currentProfiles);
+    currentProfiles = applyPublicationsFilter(profilesWithPublications, filters);
+    console.log(`⏱️ Stage 3 completed in ${Math.round((Date.now() - stageStartTime) / 1000)}s`);
+    
+    if (currentProfiles.length === 0) {
+      console.log('❌ No profiles passed publications filter');
+      return {
+        success: true,
+        profiles: [],
+        summary: {
+          searchResults: linkedInProfiles.length,
+          profilesProcessed: profilesToProcess.length,
+          profilesPassed: 0,
+          processingTime: Date.now() - startTime,
+          stageResults: {
+            linkedInFetched: profilesWithEducation.length,
+            educationPassed: profilesWithPublications.length,
+            publicationsPassed: 0
+          }
+        }
+      };
+    }
+    
+    // Stage 4: Parse patents in parallel → Apply patents filter
+    console.log(`\n🏁 STAGE 4: Patents parsing and filtering...`);
+    stageStartTime = Date.now();
+    let profilesWithPatents = await parsePatentsParallel(currentProfiles);
+    currentProfiles = applyPatentsFilter(profilesWithPatents, filters);
+    console.log(`⏱️ Stage 4 completed in ${Math.round((Date.now() - stageStartTime) / 1000)}s`);
+    
+    if (currentProfiles.length === 0) {
+      console.log('❌ No profiles passed patents filter');
+      return {
+        success: true,
+        profiles: [],
+        summary: {
+          searchResults: linkedInProfiles.length,
+          profilesProcessed: profilesToProcess.length,
+          profilesPassed: 0,
+          processingTime: Date.now() - startTime,
+          stageResults: {
+            linkedInFetched: profilesWithEducation.length,
+            educationPassed: profilesWithPublications.length,
+            publicationsPassed: profilesWithPatents.length,
+            patentsPassed: 0
+          }
+        }
+      };
+    }
+    
+    // Stage 5: Parse GitHub in parallel → Apply GitHub filter
+    console.log(`\n🏁 STAGE 5: GitHub parsing and filtering...`);
+    stageStartTime = Date.now();
+    let profilesWithGitHub = await parseGitHubParallel(currentProfiles);
+    currentProfiles = applyGitHubFilter(profilesWithGitHub, filters);
+    console.log(`⏱️ Stage 5 completed in ${Math.round((Date.now() - stageStartTime) / 1000)}s`);
+    
+    if (currentProfiles.length === 0) {
+      console.log('❌ No profiles passed GitHub filter');
+      return {
+        success: true,
+        profiles: [],
+        summary: {
+          searchResults: linkedInProfiles.length,
+          profilesProcessed: profilesToProcess.length,
+          profilesPassed: 0,
+          processingTime: Date.now() - startTime,
+          stageResults: {
+            linkedInFetched: profilesWithEducation.length,
+            educationPassed: profilesWithPublications.length,
+            publicationsPassed: profilesWithPatents.length,
+            patentsPassed: profilesWithGitHub.length,
+            githubPassed: 0
+          }
+        }
+      };
+    }
+    
+    // Stage 6: Parse work experience in parallel → Apply work experience filter
+    console.log(`\n🏁 STAGE 6: Work experience parsing and filtering...`);
+    stageStartTime = Date.now();
+    let profilesWithWorkExperience = await parseWorkExperienceParallel(currentProfiles);
+    currentProfiles = applyWorkExperienceFilter(profilesWithWorkExperience, filters);
+    console.log(`⏱️ Stage 6 completed in ${Math.round((Date.now() - stageStartTime) / 1000)}s`);
+    
+    // Limit to requested number of profiles
+    const finalProfiles = currentProfiles.slice(0, maxProfiles);
+    
+    // Convert to the expected format for the frontend
+    const formattedProfiles = finalProfiles.map(profile => ({
+      username: profile.username,
+      url: profile.url,
+      title: profile.title,
+      snippet: profile.snippet,
+      profileName: profile.researcherName,
+      parsing: {
+        education: profile.education,
+        publications: profile.publications,
+        patents: profile.patents,
+        github: profile.github,
+        workExperience: profile.workExperience
+      },
+      passedFilters: ['education', 'publications', 'patents', 'github', 'workExperience'],
+      errors: []
+    }));
+    
+    const processingTime = Date.now() - startTime;
+    
+    console.log(`\n🎯 PARALLEL profile search completed successfully!`);
+    console.log(`⚡ SPEED IMPROVEMENT: Parallel processing vs sequential!`);
+    console.log(`📊 Results: ${finalProfiles.length} valid profiles found`);
+    console.log(`⏱️ Total processing time: ${Math.round(processingTime / 1000)} seconds`);
+    console.log(`🚀 Average time per profile: ${Math.round(processingTime / profilesToProcess.length)}ms`);
+    
     return {
-      linkedinId,
+      success: true,
+      profiles: formattedProfiles,
+      summary: {
+        searchResults: linkedInProfiles.length,
+        profilesProcessed: profilesToProcess.length,
+        profilesPassed: finalProfiles.length,
+        processingTime: processingTime,
+        filters: filters,
+        averageTimePerProfile: Math.round(processingTime / profilesToProcess.length),
+        stageResults: {
+          linkedInFetched: profilesWithEducation.length,
+          educationPassed: profilesWithPublications.length,
+          publicationsPassed: profilesWithPatents.length,
+          patentsPassed: profilesWithGitHub.length,
+          githubPassed: profilesWithWorkExperience.length,
+          finalPassed: finalProfiles.length
+        },
+        processingMethod: 'parallel'
+      }
+    };
+    
+  } catch (error) {
+    console.error('❌ Error in parallel profile search:', error);
+    return {
       success: false,
-      rawData: null,
-      data: null,
-      error: error.message
+      error: error.message,
+      profiles: [],
+      summary: {
+        searchResults: 0,
+        profilesProcessed: 0,
+        profilesPassed: 0,
+        processingTime: Date.now() - startTime
+      }
     };
   }
 }
@@ -119,82 +708,166 @@ function extractLinkedInUsername(url) {
   }
 }
 
+// =============================================================================
+// ORIGINAL FUNCTIONS (keeping for compatibility)
+// =============================================================================
+
 /**
- * Search for LinkedIn profiles using SerpAPI
- * @param {object} filters - Filter object
- * @param {number} maxResults - Maximum number of results to return
- * @returns {Promise<Array>} Array of LinkedIn profile URLs
+ * Fetch LinkedIn profile data using People Data Labs API
+ * @param {string} linkedinId - LinkedIn ID (without linkedin.com/in/)
+ * @returns {Promise<object>} Profile data from PDL API
  */
-async function searchLinkedInProfiles(filters, maxResults = 50) {
+async function fetchLinkedInProfile(linkedinId) {
+  console.log(`🔍 Fetching LinkedIn profile: ${linkedinId}`);
+  
   try {
-    const query = buildLinkedInSearchQuery(filters);
-    console.log(`🔍 Searching LinkedIn profiles with query: ${query}`);
-    
-    const response = await axios.get('https://serpapi.com/search.json', {
+    const response = await axios.get(PDL_BASE_URL, {
       params: {
-        engine: 'google',
-        q: query,
-        gl: 'us',
-        hl: 'en',
-        num: 100, // Google max is 100
-        api_key: SERPAPI_KEY
+        profile: `linkedin.com/in/${linkedinId}`
       },
-      timeout: 15000
+      headers: {
+        'X-Api-Key': PDL_API_KEY
+      },
+      timeout: 30000 // 30 second timeout
     });
-    
-    const organicResults = response.data.organic_results || [];
-    console.log(`📊 Found ${organicResults.length} search results`);
-    
-    // Extract LinkedIn URLs and usernames
-    const linkedInProfiles = [];
-    for (const result of organicResults) {
-      if (result.link && result.link.includes('linkedin.com/in/')) {
-        const username = extractLinkedInUsername(result.link);
-        if (username) {
-          linkedInProfiles.push({
-            url: result.link,
-            username: username,
-            title: result.title,
-            snippet: result.snippet
-          });
-        }
-      }
+
+    if (response.data && response.data.status === 200) {
+      console.log(`✅ Successfully fetched profile for: ${linkedinId}`);
+      return {
+        linkedinId,
+        success: true,
+        rawData: response.data,
+        data: response.data.data,
+        error: null
+      };
+    } else {
+      console.log(`⚠️ Profile not found for: ${linkedinId}`);
+      return {
+        linkedinId,
+        success: false,
+        rawData: null,
+        data: null,
+        error: 'Profile not found'
+      };
     }
-    
-    console.log(`✅ Extracted ${linkedInProfiles.length} LinkedIn profiles`);
-    return linkedInProfiles;
-    
   } catch (error) {
-    console.error('❌ Error searching LinkedIn profiles:', error.message);
-    throw error;
+    console.error(`❌ Error fetching profile for ${linkedinId}:`, error.message);
+    return {
+      linkedinId,
+      success: false,
+      rawData: null,
+      data: null,
+      error: error.message
+    };
   }
 }
 
 /**
- * Check if education meets filter criteria
- * @param {object} education - Parsed education data
+ * Search for LinkedIn profiles using SerpAPI with education filters
  * @param {object} filters - Filter criteria
- * @returns {boolean} Whether education meets criteria
+ * @param {number} maxResults - Maximum results to return
+ * @returns {Promise<Array>} Array of LinkedIn profile info
+ */
+async function searchLinkedInProfiles(filters, maxResults = 50) {
+  try {
+    console.log('🔍 Searching LinkedIn profiles with SerpAPI...');
+    
+    // Build search query based on filters
+    let searchQuery = 'site:linkedin.com/in/ ';
+    
+    // Add education filters to search query
+    if (filters.education && filters.education.enabled) {
+      if (filters.education.degree) {
+        searchQuery += `"${filters.education.degree}" `;
+      }
+      if (filters.education.fieldOfStudy) {
+        searchQuery += `"${filters.education.fieldOfStudy}" `;
+      }
+      if (filters.education.institute) {
+        searchQuery += `"${filters.education.institute}" `;
+      }
+    }
+    
+    // Add general AI/ML keywords
+    searchQuery += '"AI" OR "Machine Learning" OR "Artificial Intelligence" OR "Deep Learning" OR "Data Science"';
+    
+    console.log(`🔍 Search query: ${searchQuery}`);
+    
+    const response = await axios.get('https://serpapi.com/search', {
+      params: {
+        engine: 'google',
+        q: searchQuery,
+        num: maxResults,
+        api_key: SERPAPI_KEY
+      },
+      timeout: 30000
+    });
+
+    const organicResults = response.data.organic_results || [];
+    
+    // Extract LinkedIn profile information
+    const linkedInProfiles = organicResults
+      .filter(result => result.link && result.link.includes('linkedin.com/in/'))
+      .map(result => {
+        const urlMatch = result.link.match(/linkedin\.com\/in\/([^\/\?]+)/);
+        const username = urlMatch ? urlMatch[1] : null;
+        
+        if (!username) return null;
+        
+        return {
+          username,
+          url: result.link,
+          title: result.title,
+          snippet: result.snippet || ''
+        };
+      })
+      .filter(Boolean);
+
+    console.log(`📊 Found ${linkedInProfiles.length} LinkedIn profiles from search`);
+    return linkedInProfiles;
+    
+  } catch (error) {
+    console.error('❌ Error searching LinkedIn profiles:', error.message);
+    return [];
+  }
+}
+
+// =============================================================================
+// FILTER CHECK FUNCTIONS
+// =============================================================================
+
+/**
+ * Check if education meets filter criteria
+ * @param {object} education - Education data
+ * @param {object} filters - Filter criteria
+ * @returns {boolean} Whether education passes filter
  */
 function checkEducationFilter(education, filters) {
-  const { degree, fieldOfStudy, instituteTier } = filters;
-  
-  // Check degree
-  if (degree && degree !== '') {
-    if (!education.degree || !education.degree.toLowerCase().includes(degree.toLowerCase())) {
+
+  const filter = filters;
+
+  // Check degree requirement
+  if (filter.degree && education.degree) {
+    const expectedDegree = filter.degree.toLowerCase();
+    const actualDegree = education.degree.toLowerCase();
+    
+    if (expectedDegree.includes('phd') && !actualDegree.includes('phd')) {
+      return false;
+    }
+    if (expectedDegree.includes('master') && !actualDegree.includes('master') && !actualDegree.includes('m.')) {
+      return false;
+    }
+    if (expectedDegree.includes('bachelor') && !actualDegree.includes('bachelor') && !actualDegree.includes('b.')) {
       return false;
     }
   }
-  
+
   // Check field of study
-  if (fieldOfStudy && fieldOfStudy !== '') {
-    const actualField = education.fieldOfStudy || '';
-    const filterFieldLower = fieldOfStudy.toLowerCase();
-    const actualFieldLower = actualField.toLowerCase();
-    
-    // Handle broad matches for field of study
+  if (filter.fieldOfStudy && education.fieldOfStudy) {
+    const filterFieldLower = filter.fieldOfStudy.toLowerCase();
+    const actualFieldLower = education.fieldOfStudy.toLowerCase();
     let fieldMatches = false;
-    
+
     if (filterFieldLower === 'ai') {
       fieldMatches = actualFieldLower.includes('ai') || 
                     actualFieldLower.includes('artificial intelligence') ||
@@ -233,152 +906,131 @@ function checkEducationFilter(education, filters) {
     }
     
     if (!fieldMatches) {
-      console.log(`❌ Field of study filter failed: expected "${fieldOfStudy}", got "${education.fieldOfStudy}"`);
-      return false;
+        return false;
     }
   }
-  
-  // Check institute tier (QS ranking based)
-  if (instituteTier && instituteTier !== '') {
+
+  // Check institute tier requirement (QS ranking based)
+  if (filter.instituteTier && education.instituteTier) {
+    const expectedTier = filter.instituteTier;
     const actualTier = education.instituteTier;
     
+    console.log(`🔍 Institute filter: expected "${expectedTier}", got "${actualTier}"`);
+    
     // Handle the two tier categories
-    if (instituteTier === 'Top Institute (QS <300)') {
-      if (actualTier !== 'Top Institute (QS <300)') {
+    if (expectedTier === 'Top Institute (QS <300)') {
+      if (!actualTier.includes('<300')) {
         console.log(`❌ Institute tier filter failed: expected "Top Institute (QS <300)", got "${actualTier}"`);
         return false;
       }
-    } else if (instituteTier === 'Other Institute (QS >300)') {
-      if (actualTier !== 'Other Institute (QS >300)') {
+    } else if (expectedTier === 'Other Institute (QS >300)') {
+      if (!actualTier.includes('>300')) {
         console.log(`❌ Institute tier filter failed: expected "Other Institute (QS >300)", got "${actualTier}"`);
+        return false;
+      }
+    } else {
+      // Exact match for other tier specifications
+      if (actualTier !== expectedTier) {
+        console.log(`❌ Institute tier filter failed: expected "${expectedTier}", got "${actualTier}"`);
         return false;
       }
     }
   }
-  
-  console.log(`✅ Education filter passed all criteria`);
+
   return true;
 }
 
 /**
  * Check if publications meet filter criteria
- * @param {object} publications - Parsed publications data
+ * @param {object} publications - Publications data
  * @param {object} filters - Filter criteria
- * @returns {boolean} Whether publications meet criteria
+ * @returns {boolean} Whether publications pass filter
  */
 function checkPublicationsFilter(publications, filters) {
-  const {
-    hasTopAIConferences,
-    hasOtherAIConferences,
-    hasReputableJournals,
-    hasOtherJournals,
-    minPublications,
-    minCitations
-  } = filters;
-  
+
+  const filter = filters.publications;
+
   // Check minimum publications
-  if (minPublications && minPublications !== '') {
-    const minPubs = parseInt(minPublications);
-    if (publications.numberOfPublications < minPubs) {
-      return false;
-    }
+  if (filter.minPublications && publications.numberOfPublications < filter.minPublications) {
+    return false;
   }
-  
+
   // Check minimum citations
-  if (minCitations && minCitations !== '') {
-    const minCites = parseInt(minCitations);
-    if (publications.citations < minCites) {
-      return false;
-    }
+  if (filter.minCitations && publications.citations < filter.minCitations) {
+    return false;
   }
-  
-  // Check venue quality requirements
-  if (hasTopAIConferences && !publications.venueQuality?.hasTopAIConference) {
+
+  // Check h-index
+  if (filter.minHIndex && publications.hIndex < filter.minHIndex) {
+    return false;
+  }
+
+  // Check venue quality
+  if (filter.hasTopAIConferences && !publications.venueQuality?.hasTopAIConference) {
+    return false;
+  }
+
+  if (filter.hasOtherAIConferences && !publications.venueQuality?.hasOtherAIConference) {
     return false;
   }
   
-  if (hasOtherAIConferences && !publications.venueQuality?.hasOtherAIConference) {
+  if (filter.hasReputableJournals && !publications.venueQuality?.hasReputableJournal) {
     return false;
   }
   
-  if (hasReputableJournals && !publications.venueQuality?.hasReputableJournal) {
+  if (filter.hasOtherJournals && !publications.venueQuality?.hasOtherPeerReviewed) {
     return false;
   }
-  
-  if (hasOtherJournals && !publications.venueQuality?.hasOtherPeerReviewed) {
+
+  if (filter.experienceBracket && publications.experienceBracket !== filter.experienceBracket) {
     return false;
   }
-  
+
   return true;
 }
 
 /**
  * Check if patents meet filter criteria
- * @param {object} patents - Parsed patents data
+ * @param {object} patents - Patents data
  * @param {object} filters - Filter criteria
- * @returns {boolean} Whether patents meet criteria
+ * @returns {boolean} Whether patents pass filter
  */
 function checkPatentsFilter(patents, filters) {
-  const {
-    grantedFirstInventor,
-    grantedCoInventor,
-    filedPatent,
-    significantContribution
-  } = filters;
-  
-  if (grantedFirstInventor && !patents.grantedFirstInventor) {
+  const filter = filters;
+
+  // Check granted patents requirement
+  if (filter.grantedFirstInventor && !patents.grantedFirstInventor) {
     return false;
   }
-  
-  if (grantedCoInventor && !patents.grantedCoInventor) {
+
+  if (filter.grantedCoInventor && !(patents.grantedFirstInventor || patents.grantedCoInventor)) {
     return false;
   }
-  
-  if (filedPatent && !patents.filedPatent) {
+
+  if (filter.filedPatent && !(patents.grantedFirstInventor || patents.grantedCoInventor || patents.filedPatent)) {
     return false;
   }
-  
-  if (significantContribution && !patents.significantContribution) {
-    return false;
-  }
-  
+
   return true;
 }
 
 /**
  * Check if GitHub meets filter criteria
- * @param {object} github - Parsed GitHub data
+ * @param {object} github - GitHub data
  * @param {object} filters - Filter criteria
- * @returns {boolean} Whether GitHub meets criteria
+ * @returns {boolean} Whether GitHub passes filter
  */
 function checkGitHubFilter(github, filters) {
-  // Add GitHub-specific filter criteria here if needed
-  // For now, just return true since no GitHub filters are defined in the UI
   return true;
 }
 
 /**
  * Check if work experience meets filter criteria
- * @param {object} workExperience - Parsed work experience data
+ * @param {object} workExperience - Work experience data
  * @param {object} filters - Filter criteria
- * @returns {boolean} Whether work experience meets criteria
+ * @returns {boolean} Whether work experience passes filter
  */
 function checkExperienceFilter(workExperience, filters) {
-  const { experienceBracket, minHIndex } = filters;
-  
-  // Check experience bracket
-  if (experienceBracket && experienceBracket !== '') {
-    if (workExperience.experienceBracket !== experienceBracket) {
-      return false;
-    }
-  }
-  
-  // Check minimum H-index (if available in publications data)
-  if (minHIndex && minHIndex !== '') {
-    const minH = parseInt(minHIndex);
-    // This would be checked in publications, not work experience
-    // Keeping here for completeness
-  }
   
   return true;
 }
@@ -587,7 +1239,7 @@ async function parseAndFilterProfile(profileInfo, filters) {
 }
 
 /**
- * Main profile search function
+ * Main profile search function (original sequential version)
  * @param {object} filters - All filter criteria from UI
  * @param {object} options - Search options
  * @returns {Promise<object>} Search results
@@ -666,12 +1318,13 @@ async function profileSearch(filters, options = {}) {
         profilesPassed: validProfiles.length,
         processingTime: processingTime,
         filters: filters,
-        averageTimePerProfile: Math.round(processingTime / maxToProcess)
+        averageTimePerProfile: Math.round(processingTime / maxToProcess),
+        processingMethod: 'sequential'
       }
     };
     
   } catch (error) {
-    console.error('❌ Profile search failed:', error);
+    console.error('❌ Error in profile search:', error);
     return {
       success: false,
       error: error.message,
@@ -687,11 +1340,34 @@ async function profileSearch(filters, options = {}) {
 }
 
 module.exports = {
-  profileSearch,
+  // Main functions
+  profileSearch, // Original sequential version
+  profileSearchParallel, // New parallel version
+  
+  // LinkedIn profile functions
   searchLinkedInProfiles,
+  fetchLinkedInProfile,
+  fetchLinkedInProfilesParallel,
+  
+  // Individual parsing functions (original)
   parseAndFilterProfile,
-  buildLinkedInSearchQuery,
-  extractLinkedInUsername,
+  
+  // Parallel processing functions
+  processProfilesInParallel,
+  parseEducationParallel,
+  parsePublicationsParallel,
+  parsePatentsParallel,
+  parseGitHubParallel,
+  parseWorkExperienceParallel,
+  
+  // Filter application functions
+  applyEducationFilter,
+  applyPublicationsFilter,
+  applyPatentsFilter,
+  applyGitHubFilter,
+  applyWorkExperienceFilter,
+  
+  // Filter check functions
   checkEducationFilter,
   checkPublicationsFilter,
   checkPatentsFilter,

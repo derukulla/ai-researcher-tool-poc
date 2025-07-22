@@ -20,7 +20,7 @@ const API_KEYS = {
 
   // People Data Labs - For LinkedIn profile data
   PDL: {
-    key: 'your_people_data_labs_api_key_here',
+    key: 'your_pdl_api_key_here',
     required: true,
     description: 'People Data Labs API key for LinkedIn profiles',
     signupUrl: 'https://www.peopledatalabs.com'

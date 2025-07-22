@@ -1104,9 +1104,9 @@ function calculateExperienceBracket(initialYear) {
   const currentYear = new Date().getFullYear();
   const experience = currentYear - initialYear;
   
-  if (experience <= 3) return '0-3';
-  if (experience <= 7) return '4-7';
-  if (experience <= 10) return '8-10';
+  if (experience < 3) return '0-3';
+  if (experience < 6) return '3-6';
+  if (experience < 10) return '6-10';
   return '10+';
 }
 

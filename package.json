@@ -9,7 +9,9 @@
     "client": "cd client && npm start",
     "install-all": "npm install && cd server && npm install && cd ../client && npm install",
     "test-linkedin": "node tests/testLinkedInEvaluation.js",
-    "test-cv": "node tests/testCVEvaluation.js"
+    "test-cv": "node tests/testCVEvaluation.js",
+    "test-parallel": "node tests/testParallelProfileSearch.js",
+    "test-qs-filter": "node tests/testQSRankingFilter.js"
   },
   "keywords": [
     "ai",

@@ -74,20 +74,6 @@ const PatentsFilter: React.FC<PatentsFilterProps> = ({ filters, onFilterChange }
           }
         />
         
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={filters.significantContribution}
-              onChange={handleChange('significantContribution')}
-              size="small"
-            />
-          }
-          label={
-            <Typography variant="body2">
-              Significant Contribution
-            </Typography>
-          }
-        />
       </FormGroup>
     </Box>
   );

@@ -52,7 +52,7 @@ const PublicationsFilter: React.FC<PublicationsFilterProps> = ({ filters, onFilt
           }
         />
         <Typography variant="caption" color="text.secondary" sx={{ ml: 4, mb: 1 }}>
-          CVPR, ECCV, NeurIPS, ICLR, AAAI, ICCV, ICML, SIGGRAPH
+          CVPR, ECCV, NeurIPS, ICLR, AAAI, ICCV, ICML, SIGGRAPH etc...
         </Typography>
         
         <FormControlLabel
@@ -84,9 +84,6 @@ const PublicationsFilter: React.FC<PublicationsFilterProps> = ({ filters, onFilt
             </Typography>
           }
         />
-        <Typography variant="caption" color="text.secondary" sx={{ ml: 4, mb: 1 }}>
-          JMLR, PAMI, TACL, etc.
-        </Typography>
         
         <FormControlLabel
           control={

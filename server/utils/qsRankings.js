@@ -16,7 +16,7 @@ const QS_FILE_PATH = path.join(__dirname, '../data/2026 QS World University Rank
 
 // Ollama configuration
 const OLLAMA_BASE_URL = 'http://localhost:11434';
-const OLLAMA_MODEL = 'llama3:latest';
+const OLLAMA_MODEL = 'llama3:8b';
 
 /**
  * Generate content using Ollama
