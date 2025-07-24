@@ -1,0 +1,901 @@
+{
+  "rawData": {
+    "status": 200,
+    "likelihood": 9,
+    "data": {
+      "id": "mU9aN55cREjsDudcK1Fqiw_0000",
+      "full_name": "reetesh mukul",
+      "first_name": "reetesh",
+      "middle_initial": null,
+      "middle_name": null,
+      "last_initial": "m",
+      "last_name": "mukul",
+      "sex": "male",
+      "birth_year": false,
+      "birth_date": false,
+      "linkedin_url": "linkedin.com/in/mukul-reetesh-5392532",
+      "linkedin_username": "mukul-reetesh-5392532",
+      "linkedin_id": "6579261",
+      "facebook_url": null,
+      "facebook_username": null,
+      "facebook_id": null,
+      "twitter_url": null,
+      "twitter_username": null,
+      "github_url": null,
+      "github_username": null,
+      "work_email": false,
+      "personal_emails": true,
+      "recommended_personal_email": true,
+      "mobile_phone": true,
+      "industry": "telecommunications",
+      "job_title": null,
+      "job_title_role": null,
+      "job_title_sub_role": null,
+      "job_title_class": null,
+      "job_title_levels": [],
+      "job_company_id": null,
+      "job_company_name": null,
+      "job_company_website": null,
+      "job_company_size": null,
+      "job_company_founded": null,
+      "job_company_industry": null,
+      "job_company_linkedin_url": null,
+      "job_company_linkedin_id": null,
+      "job_company_facebook_url": null,
+      "job_company_twitter_url": null,
+      "job_company_location_name": null,
+      "job_company_location_locality": null,
+      "job_company_location_metro": null,
+      "job_company_location_region": null,
+      "job_company_location_geo": null,
+      "job_company_location_street_address": null,
+      "job_company_location_address_line_2": null,
+      "job_company_location_postal_code": null,
+      "job_company_location_country": null,
+      "job_company_location_continent": null,
+      "job_last_changed": null,
+      "job_last_verified": null,
+      "job_start_date": null,
+      "location_name": true,
+      "location_locality": true,
+      "location_metro": false,
+      "location_region": true,
+      "location_country": "india",
+      "location_continent": "asia",
+      "location_street_address": false,
+      "location_address_line_2": null,
+      "location_postal_code": false,
+      "location_geo": true,
+      "location_last_updated": "2025-04-17",
+      "phone_numbers": true,
+      "emails": true,
+      "interests": [],
+      "skills": [
+        "adobe lightroom",
+        "algorithms",
+        "android",
+        "android development",
+        "arm",
+        "artificial intelligence",
+        "boost c++",
+        "c",
+        "c++",
+        "computational mathematics",
+        "computer algebra",
+        "computer vision",
+        "convolutional neural network",
+        "convolutional neural networks",
+        "data mining",
+        "data science",
+        "deep learning",
+        "functional programming",
+        "group theory",
+        "haskell",
+        "hive",
+        "image processing",
+        "java",
+        "javascript",
+        "jtag",
+        "keras",
+        "lambda expressions",
+        "linear algebra",
+        "long short term memory",
+        "lstm",
+        "lua",
+        "machine learning",
+        "mathematics",
+        "natural language processing",
+        "network communications",
+        "neural networks",
+        "neuro linguistic programming",
+        "nlp",
+        "number theory",
+        "object detection",
+        "opencv",
+        "parallel algorithms",
+        "parallel computing",
+        "parallel programming",
+        "programming",
+        "python",
+        "pytorch",
+        "qt",
+        "r",
+        "rcnn",
+        "rust",
+        "software architecture",
+        "sql",
+        "tensorflow",
+        "theoretical computer science",
+        "voice communications",
+        "voice processing",
+        "x86 assembly"
+      ],
+      "location_names": true,
+      "regions": true,
+      "countries": [
+        "india"
+      ],
+      "street_addresses": false,
+      "experience": [
+        {
+          "company": {
+            "name": "huawei singapore",
+            "size": "201-500",
+            "id": "uPzV5aF34rLfyJzoM9KULAsF5hC5",
+            "founded": 1987,
+            "industry": "telecommunications",
+            "location": {
+              "name": "singapore, central region, singapore",
+              "locality": "singapore",
+              "region": "central region",
+              "metro": null,
+              "country": "singapore",
+              "continent": "asia",
+              "street_address": "51 changi business park central 2",
+              "address_line_2": null,
+              "postal_code": "486066",
+              "geo": "1.34,103.81"
+            },
+            "linkedin_url": "linkedin.com/company/huawei-singapore",
+            "linkedin_id": "43226117",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": null
+          },
+          "location_names": [],
+          "end_date": "2023-11",
+          "start_date": "2022-12",
+          "title": {
+            "name": "senior principal research engineer",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": [
+              "senior"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "huawei technologies india",
+            "size": "1001-5000",
+            "id": "SjC1DJ5u4XH8PG3o1fuDrwvODUMQ",
+            "founded": 1999,
+            "industry": "telecommunications",
+            "location": {
+              "name": "bangalore, karnataka, india",
+              "locality": "bangalore",
+              "region": "karnataka",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": "survey no. 37 next to epip area kundalahalli whitefield",
+              "address_line_2": null,
+              "postal_code": "560066",
+              "geo": "12.97,77.59"
+            },
+            "linkedin_url": "linkedin.com/company/huawei-india-r&d-center",
+            "linkedin_id": "15170709",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": null
+          },
+          "location_names": [],
+          "end_date": "2022-11",
+          "start_date": "2021-05",
+          "title": {
+            "name": "principal ml engineer",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "data_science",
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "adobe",
+            "size": "10001+",
+            "id": "FDkOPkxCv4NsmBv5LbiJKwl5Ca6U",
+            "founded": 1982,
+            "industry": "computer software",
+            "location": {
+              "name": "san jose, california, united states",
+              "locality": "san jose",
+              "region": "california",
+              "metro": "san jose, california",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "345 park avenue",
+              "address_line_2": null,
+              "postal_code": "95110",
+              "geo": "37.29,-121.81"
+            },
+            "linkedin_url": "linkedin.com/company/adobe",
+            "linkedin_id": "1480",
+            "facebook_url": "facebook.com/adobe",
+            "twitter_url": "twitter.com/adobe",
+            "website": "adobe.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2021-04",
+          "start_date": "2016-09",
+          "title": {
+            "name": "senior computer scientist",
+            "class": null,
+            "role": null,
+            "sub_role": null,
+            "levels": [
+              "senior"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "flipkart",
+            "size": "10001+",
+            "id": "BCEVCxpNmhzJmwrR9FoPEwSOCunz",
+            "founded": 2007,
+            "industry": "internet",
+            "location": {
+              "name": "bangalore, karnataka, india",
+              "locality": "bangalore",
+              "region": "karnataka",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "560103",
+              "geo": "12.97,77.59"
+            },
+            "linkedin_url": "linkedin.com/company/flipkart",
+            "linkedin_id": "321062",
+            "facebook_url": "facebook.com/flipkart",
+            "twitter_url": "twitter.com/flipkart",
+            "website": "flipkart.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2016-08",
+          "start_date": "2015-08",
+          "title": {
+            "name": "sde iii",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "software",
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "qualcomm",
+            "size": "10001+",
+            "id": "3nuTvPpIfYB37AqMBgEo9ga1mI5q",
+            "founded": 1985,
+            "industry": "wireless",
+            "location": {
+              "name": "san diego, california, united states",
+              "locality": "san diego",
+              "region": "california",
+              "metro": "san diego, california",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "92121",
+              "geo": "32.79,-117.18"
+            },
+            "linkedin_url": "linkedin.com/company/qualcomm",
+            "linkedin_id": "2017",
+            "facebook_url": "facebook.com/qualcomm",
+            "twitter_url": "twitter.com/qualcomm",
+            "website": "qualcomm.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2015-08",
+          "start_date": "2008-06",
+          "title": {
+            "name": "senior lead engineer",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": null,
+            "levels": [
+              "senior",
+              "manager"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "texas instruments",
+            "size": "10001+",
+            "id": "OfQfZLL0azChWDi5E48n8QmG7LR9",
+            "founded": 1930,
+            "industry": "semiconductors",
+            "location": {
+              "name": "dallas, texas, united states",
+              "locality": "dallas",
+              "region": "texas",
+              "metro": "dallas, texas",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "12500 ti boulevard",
+              "address_line_2": null,
+              "postal_code": "75243",
+              "geo": "32.88,-96.75"
+            },
+            "linkedin_url": "linkedin.com/company/texas-instruments",
+            "linkedin_id": "1397",
+            "facebook_url": "facebook.com/texasinstruments",
+            "twitter_url": "twitter.com/txinstruments",
+            "website": "ti.com"
+          },
+          "location_names": [],
+          "end_date": "2008-06",
+          "start_date": "2006-06",
+          "title": {
+            "name": "software engineer",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "software",
+            "levels": []
+          },
+          "is_primary": false
+        }
+      ],
+      "education": [
+        {
+          "school": {
+            "name": "international institute of information technology bangalore",
+            "type": "post-secondary institution",
+            "id": "QMo7oWxdzBDhlJ1nPGGeiA_0",
+            "location": {
+              "name": "electronics city, karnataka, india",
+              "locality": "electronics city",
+              "region": "karnataka",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/iiitbofficial",
+            "facebook_url": "facebook.com/iiitbofficial",
+            "twitter_url": "twitter.com/iiitb_official",
+            "linkedin_id": "800493",
+            "website": "iiitb.ac.in",
+            "domain": "iiitb.ac.in"
+          },
+          "degrees": [],
+          "start_date": "2004",
+          "end_date": "2006",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "bit sindri",
+            "type": "post-secondary institution",
+            "id": "nRyF0Fv7S6j-7IDgp47lZw_0",
+            "location": {
+              "name": "dhanbād, jharkhand, india",
+              "locality": "dhanbād",
+              "region": "jharkhand",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/bit-sindri",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "5329515",
+            "website": "bitsindri.ac.in",
+            "domain": "bitsindri.ac.in"
+          },
+          "degrees": [
+            "bachelors",
+            "bachelor of engineering"
+          ],
+          "start_date": "2000",
+          "end_date": "2004",
+          "majors": [
+            "communication",
+            "electronics"
+          ],
+          "minors": [],
+          "gpa": null
+        }
+      ],
+      "profiles": [
+        {
+          "network": "linkedin",
+          "id": "6579261",
+          "url": "linkedin.com/in/mukul-reetesh-5392532",
+          "username": "mukul-reetesh-5392532"
+        },
+        {
+          "network": "linkedin",
+          "id": "6579261",
+          "url": "linkedin.com/in/reetesh-mukul-5392532",
+          "username": "reetesh-mukul-5392532"
+        }
+      ],
+      "dataset_version": "31.0"
+    }
+  },
+  "data": {
+    "id": "mU9aN55cREjsDudcK1Fqiw_0000",
+    "full_name": "reetesh mukul",
+    "first_name": "reetesh",
+    "middle_initial": null,
+    "middle_name": null,
+    "last_initial": "m",
+    "last_name": "mukul",
+    "sex": "male",
+    "birth_year": false,
+    "birth_date": false,
+    "linkedin_url": "linkedin.com/in/mukul-reetesh-5392532",
+    "linkedin_username": "mukul-reetesh-5392532",
+    "linkedin_id": "6579261",
+    "facebook_url": null,
+    "facebook_username": null,
+    "facebook_id": null,
+    "twitter_url": null,
+    "twitter_username": null,
+    "github_url": null,
+    "github_username": null,
+    "work_email": false,
+    "personal_emails": true,
+    "recommended_personal_email": true,
+    "mobile_phone": true,
+    "industry": "telecommunications",
+    "job_title": null,
+    "job_title_role": null,
+    "job_title_sub_role": null,
+    "job_title_class": null,
+    "job_title_levels": [],
+    "job_company_id": null,
+    "job_company_name": null,
+    "job_company_website": null,
+    "job_company_size": null,
+    "job_company_founded": null,
+    "job_company_industry": null,
+    "job_company_linkedin_url": null,
+    "job_company_linkedin_id": null,
+    "job_company_facebook_url": null,
+    "job_company_twitter_url": null,
+    "job_company_location_name": null,
+    "job_company_location_locality": null,
+    "job_company_location_metro": null,
+    "job_company_location_region": null,
+    "job_company_location_geo": null,
+    "job_company_location_street_address": null,
+    "job_company_location_address_line_2": null,
+    "job_company_location_postal_code": null,
+    "job_company_location_country": null,
+    "job_company_location_continent": null,
+    "job_last_changed": null,
+    "job_last_verified": null,
+    "job_start_date": null,
+    "location_name": true,
+    "location_locality": true,
+    "location_metro": false,
+    "location_region": true,
+    "location_country": "india",
+    "location_continent": "asia",
+    "location_street_address": false,
+    "location_address_line_2": null,
+    "location_postal_code": false,
+    "location_geo": true,
+    "location_last_updated": "2025-04-17",
+    "phone_numbers": true,
+    "emails": true,
+    "interests": [],
+    "skills": [
+      "adobe lightroom",
+      "algorithms",
+      "android",
+      "android development",
+      "arm",
+      "artificial intelligence",
+      "boost c++",
+      "c",
+      "c++",
+      "computational mathematics",
+      "computer algebra",
+      "computer vision",
+      "convolutional neural network",
+      "convolutional neural networks",
+      "data mining",
+      "data science",
+      "deep learning",
+      "functional programming",
+      "group theory",
+      "haskell",
+      "hive",
+      "image processing",
+      "java",
+      "javascript",
+      "jtag",
+      "keras",
+      "lambda expressions",
+      "linear algebra",
+      "long short term memory",
+      "lstm",
+      "lua",
+      "machine learning",
+      "mathematics",
+      "natural language processing",
+      "network communications",
+      "neural networks",
+      "neuro linguistic programming",
+      "nlp",
+      "number theory",
+      "object detection",
+      "opencv",
+      "parallel algorithms",
+      "parallel computing",
+      "parallel programming",
+      "programming",
+      "python",
+      "pytorch",
+      "qt",
+      "r",
+      "rcnn",
+      "rust",
+      "software architecture",
+      "sql",
+      "tensorflow",
+      "theoretical computer science",
+      "voice communications",
+      "voice processing",
+      "x86 assembly"
+    ],
+    "location_names": true,
+    "regions": true,
+    "countries": [
+      "india"
+    ],
+    "street_addresses": false,
+    "experience": [
+      {
+        "company": {
+          "name": "huawei singapore",
+          "size": "201-500",
+          "id": "uPzV5aF34rLfyJzoM9KULAsF5hC5",
+          "founded": 1987,
+          "industry": "telecommunications",
+          "location": {
+            "name": "singapore, central region, singapore",
+            "locality": "singapore",
+            "region": "central region",
+            "metro": null,
+            "country": "singapore",
+            "continent": "asia",
+            "street_address": "51 changi business park central 2",
+            "address_line_2": null,
+            "postal_code": "486066",
+            "geo": "1.34,103.81"
+          },
+          "linkedin_url": "linkedin.com/company/huawei-singapore",
+          "linkedin_id": "43226117",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": null
+        },
+        "location_names": [],
+        "end_date": "2023-11",
+        "start_date": "2022-12",
+        "title": {
+          "name": "senior principal research engineer",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": [
+            "senior"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "huawei technologies india",
+          "size": "1001-5000",
+          "id": "SjC1DJ5u4XH8PG3o1fuDrwvODUMQ",
+          "founded": 1999,
+          "industry": "telecommunications",
+          "location": {
+            "name": "bangalore, karnataka, india",
+            "locality": "bangalore",
+            "region": "karnataka",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": "survey no. 37 next to epip area kundalahalli whitefield",
+            "address_line_2": null,
+            "postal_code": "560066",
+            "geo": "12.97,77.59"
+          },
+          "linkedin_url": "linkedin.com/company/huawei-india-r&d-center",
+          "linkedin_id": "15170709",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": null
+        },
+        "location_names": [],
+        "end_date": "2022-11",
+        "start_date": "2021-05",
+        "title": {
+          "name": "principal ml engineer",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "data_science",
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "adobe",
+          "size": "10001+",
+          "id": "FDkOPkxCv4NsmBv5LbiJKwl5Ca6U",
+          "founded": 1982,
+          "industry": "computer software",
+          "location": {
+            "name": "san jose, california, united states",
+            "locality": "san jose",
+            "region": "california",
+            "metro": "san jose, california",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "345 park avenue",
+            "address_line_2": null,
+            "postal_code": "95110",
+            "geo": "37.29,-121.81"
+          },
+          "linkedin_url": "linkedin.com/company/adobe",
+          "linkedin_id": "1480",
+          "facebook_url": "facebook.com/adobe",
+          "twitter_url": "twitter.com/adobe",
+          "website": "adobe.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2021-04",
+        "start_date": "2016-09",
+        "title": {
+          "name": "senior computer scientist",
+          "class": null,
+          "role": null,
+          "sub_role": null,
+          "levels": [
+            "senior"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "flipkart",
+          "size": "10001+",
+          "id": "BCEVCxpNmhzJmwrR9FoPEwSOCunz",
+          "founded": 2007,
+          "industry": "internet",
+          "location": {
+            "name": "bangalore, karnataka, india",
+            "locality": "bangalore",
+            "region": "karnataka",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "560103",
+            "geo": "12.97,77.59"
+          },
+          "linkedin_url": "linkedin.com/company/flipkart",
+          "linkedin_id": "321062",
+          "facebook_url": "facebook.com/flipkart",
+          "twitter_url": "twitter.com/flipkart",
+          "website": "flipkart.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2016-08",
+        "start_date": "2015-08",
+        "title": {
+          "name": "sde iii",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "software",
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "qualcomm",
+          "size": "10001+",
+          "id": "3nuTvPpIfYB37AqMBgEo9ga1mI5q",
+          "founded": 1985,
+          "industry": "wireless",
+          "location": {
+            "name": "san diego, california, united states",
+            "locality": "san diego",
+            "region": "california",
+            "metro": "san diego, california",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "92121",
+            "geo": "32.79,-117.18"
+          },
+          "linkedin_url": "linkedin.com/company/qualcomm",
+          "linkedin_id": "2017",
+          "facebook_url": "facebook.com/qualcomm",
+          "twitter_url": "twitter.com/qualcomm",
+          "website": "qualcomm.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2015-08",
+        "start_date": "2008-06",
+        "title": {
+          "name": "senior lead engineer",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": null,
+          "levels": [
+            "senior",
+            "manager"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "texas instruments",
+          "size": "10001+",
+          "id": "OfQfZLL0azChWDi5E48n8QmG7LR9",
+          "founded": 1930,
+          "industry": "semiconductors",
+          "location": {
+            "name": "dallas, texas, united states",
+            "locality": "dallas",
+            "region": "texas",
+            "metro": "dallas, texas",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "12500 ti boulevard",
+            "address_line_2": null,
+            "postal_code": "75243",
+            "geo": "32.88,-96.75"
+          },
+          "linkedin_url": "linkedin.com/company/texas-instruments",
+          "linkedin_id": "1397",
+          "facebook_url": "facebook.com/texasinstruments",
+          "twitter_url": "twitter.com/txinstruments",
+          "website": "ti.com"
+        },
+        "location_names": [],
+        "end_date": "2008-06",
+        "start_date": "2006-06",
+        "title": {
+          "name": "software engineer",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "software",
+          "levels": []
+        },
+        "is_primary": false
+      }
+    ],
+    "education": [
+      {
+        "school": {
+          "name": "international institute of information technology bangalore",
+          "type": "post-secondary institution",
+          "id": "QMo7oWxdzBDhlJ1nPGGeiA_0",
+          "location": {
+            "name": "electronics city, karnataka, india",
+            "locality": "electronics city",
+            "region": "karnataka",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/iiitbofficial",
+          "facebook_url": "facebook.com/iiitbofficial",
+          "twitter_url": "twitter.com/iiitb_official",
+          "linkedin_id": "800493",
+          "website": "iiitb.ac.in",
+          "domain": "iiitb.ac.in"
+        },
+        "degrees": [],
+        "start_date": "2004",
+        "end_date": "2006",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "bit sindri",
+          "type": "post-secondary institution",
+          "id": "nRyF0Fv7S6j-7IDgp47lZw_0",
+          "location": {
+            "name": "dhanbād, jharkhand, india",
+            "locality": "dhanbād",
+            "region": "jharkhand",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/bit-sindri",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "5329515",
+          "website": "bitsindri.ac.in",
+          "domain": "bitsindri.ac.in"
+        },
+        "degrees": [
+          "bachelors",
+          "bachelor of engineering"
+        ],
+        "start_date": "2000",
+        "end_date": "2004",
+        "majors": [
+          "communication",
+          "electronics"
+        ],
+        "minors": [],
+        "gpa": null
+      }
+    ],
+    "profiles": [
+      {
+        "network": "linkedin",
+        "id": "6579261",
+        "url": "linkedin.com/in/mukul-reetesh-5392532",
+        "username": "mukul-reetesh-5392532"
+      },
+      {
+        "network": "linkedin",
+        "id": "6579261",
+        "url": "linkedin.com/in/reetesh-mukul-5392532",
+        "username": "reetesh-mukul-5392532"
+      }
+    ],
+    "dataset_version": "31.0"
+  },
+  "fetchedAt": "2025-07-22T11:43:24.020Z"
+}

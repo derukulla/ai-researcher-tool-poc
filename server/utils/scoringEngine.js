@@ -343,15 +343,15 @@ function calculatePublicationsScore(publications) {
   // Fallback to legacy array-based system for backward compatibility
   else {
     // Top AI conferences - prioritized scoring
-    if (publications.topAIConferences && publications.topAIConferences.length > 0) {
-      const topConferenceCount = publications.topAIConferences.length;
-      if (publications.citations >= 30) {
+  if (publications.topAIConferences && publications.topAIConferences.length > 0) {
+    const topConferenceCount = publications.topAIConferences.length;
+    if (publications.citations >= 30) {
         score += Math.min(topConferenceCount * 5, 5); // Max 5 points for top conferences with citations
-      } else {
-        score += Math.min(topConferenceCount * 2, 3); // Reduced points without citations
-      }
+    } else {
+      score += Math.min(topConferenceCount * 2, 3); // Reduced points without citations
     }
-    
+  }
+  
     // Other AI conferences - only if no top conferences
     else if (publications.otherAIConferences && publications.otherAIConferences.length > 0) {
       score += Math.min(publications.otherAIConferences.length * 2, 2); // Max 2 points

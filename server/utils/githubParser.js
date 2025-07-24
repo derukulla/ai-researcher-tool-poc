@@ -979,7 +979,6 @@ async function extractGitHubWithAI(profileData) {
       matchReason: matchResult.matchReason,
       extractionMethod: 'github_ai_matching',
       extractionDate: new Date().toISOString(),
-      
       // Add comprehensive analysis results
       analysis: profileAnalysis
     };

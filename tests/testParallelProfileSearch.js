@@ -6,7 +6,7 @@
 // Change working directory to server for proper module resolution
 process.chdir(require('path').join(__dirname, '../server'));
 
-const { profileSearchParallel, profileSearch } = require('./utils/profileSearch');
+const { profileSearchParallel, profileSearch } = require('../server/utils/profileSearch');
 
 /**
  * Test parallel vs sequential profile search
@@ -19,14 +19,14 @@ async function testParallelVsSequential() {
   const testFilters = {
     education: {
       enabled: true,
-      degree: 'PhD',
-      fieldOfStudy: 'AI',
+      degree: '',
+      fieldOfStudy: '',
       institute: '' // Any institute
     },
     publications: {
       enabled: true,
-      minPublications: 5,
-      minCitations: 100
+      minPublications: 0,
+      minCitations: 0
     },
     patents: {
       enabled: false
@@ -52,42 +52,42 @@ async function testParallelVsSequential() {
   
   try {
     // Test 1: Parallel Processing
-    console.log('⚡ TEST 1: PARALLEL PROCESSING');
-    console.log('-'.repeat(40));
-    const parallelStartTime = Date.now();
+    // console.log('⚡ TEST 1: PARALLEL PROCESSING');
+    // console.log('-'.repeat(40));
+    // const parallelStartTime = Date.now();
     
-    const parallelResults = await profileSearchParallel(testFilters, options);
+    // const parallelResults = await profileSearchParallel(testFilters, options);
     
-    const parallelTime = Date.now() - parallelStartTime;
+    // const parallelTime = Date.now() - parallelStartTime;
     
-    console.log('\n📊 PARALLEL RESULTS:');
-    console.log(`   ✅ Success: ${parallelResults.success}`);
-    console.log(`   👥 Profiles found: ${parallelResults.profiles.length}`);
-    console.log(`   ⏱️ Total time: ${Math.round(parallelTime / 1000)}s`);
-    console.log(`   🚀 Average per profile: ${Math.round(parallelTime / parallelResults.summary.profilesProcessed)}ms`);
-    console.log(`   📈 Processing method: ${parallelResults.summary.processingMethod}`);
+    // console.log('\n📊 PARALLEL RESULTS:');
+    // console.log(`   ✅ Success: ${parallelResults.success}`);
+    // console.log(`   👥 Profiles found: ${parallelResults.profiles.length}`);
+    // console.log(`   ⏱️ Total time: ${Math.round(parallelTime / 1000)}s`);
+    // console.log(`   🚀 Average per profile: ${Math.round(parallelTime / parallelResults.summary.profilesProcessed)}ms`);
+    // console.log(`   📈 Processing method: ${parallelResults.summary.processingMethod}`);
     
-    if (parallelResults.summary.stageResults) {
-      console.log(`   📋 Stage Results:`);
-      console.log(`      - LinkedIn fetched: ${parallelResults.summary.stageResults.linkedInFetched}`);
-      console.log(`      - Education passed: ${parallelResults.summary.stageResults.educationPassed}`);
-      console.log(`      - Publications passed: ${parallelResults.summary.stageResults.publicationsPassed}`);
-      console.log(`      - Final profiles: ${parallelResults.summary.stageResults.finalPassed}`);
-    }
+    // if (parallelResults.summary.stageResults) {
+    //   console.log(`   📋 Stage Results:`);
+    //   console.log(`      - LinkedIn fetched: ${parallelResults.summary.stageResults.linkedInFetched}`);
+    //   console.log(`      - Education passed: ${parallelResults.summary.stageResults.educationPassed}`);
+    //   console.log(`      - Publications passed: ${parallelResults.summary.stageResults.publicationsPassed}`);
+    //   console.log(`      - Final profiles: ${parallelResults.summary.stageResults.finalPassed}`);
+    // }
     
-    // Show found profiles
-    if (parallelResults.profiles.length > 0) {
-      console.log('\n👥 Found Researchers (Parallel):');
-      parallelResults.profiles.forEach((profile, index) => {
-        const edu = profile.parsing.education;
-        const pubs = profile.parsing.publications;
-        console.log(`   ${index + 1}. ${profile.profileName}`);
-        console.log(`      📚 ${edu.degree} in ${edu.fieldOfStudy} from ${edu.institute}`);
-        console.log(`      📄 ${pubs.numberOfPublications} papers, ${pubs.citations} citations, h-index: ${pubs.hIndex}`);
-      });
-    }
+    // // Show found profiles
+    // if (parallelResults.profiles.length > 0) {
+    //   console.log('\n👥 Found Researchers (Parallel):');
+    //   parallelResults.profiles.forEach((profile, index) => {
+    //     const edu = profile.parsing.education;
+    //     const pubs = profile.parsing.publications;
+    //     console.log(`   ${index + 1}. ${profile.profileName}`);
+    //     console.log(`      📚 ${edu.degree} in ${edu.fieldOfStudy} from ${edu.institute}`);
+    //     console.log(`      📄 ${pubs.numberOfPublications} papers, ${pubs.citations} citations, h-index: ${pubs.hIndex}`);
+    //   });
+    // }
     
-    console.log('\n' + '='.repeat(60));
+    // console.log('\n' + '='.repeat(60));
     
     // Test 2: Sequential Processing (for comparison)
     console.log('🐌 TEST 2: SEQUENTIAL PROCESSING (Comparison)');

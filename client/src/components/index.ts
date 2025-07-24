@@ -2,6 +2,7 @@ export { default as Header } from './Header';
 export { default as FilterPanel } from './FilterPanel';
 export { default as ModeSelector } from './ModeSelector';
 export { default as ProfileEvaluator } from './ProfileEvaluator';
+export { default as ProfileSearchResults } from './ProfileSearchResults';
 export { default as ResearcherCard } from './ResearcherCard';
 export { default as ResearcherList } from './ResearcherList';
 export { default as NotificationSnackbar } from './NotificationSnackbar';

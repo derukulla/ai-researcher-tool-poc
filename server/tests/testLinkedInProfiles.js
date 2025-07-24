@@ -16,7 +16,7 @@ const { calculateTotalScore } = require('./utils/scoringEngine');
 // =============================================================================
 
 // People Data Labs API configuration
-const PDL_API_KEY = '1316db092be5b196d4894b92398ccd054a5c2f81737a05c28fc2e3d1ed01763f';
+const { PDL_API_KEY } = require('../config/apiKeys');
 const PDL_BASE_URL = 'https://api.peopledatalabs.com/v5/person/enrich';
 
 // Test LinkedIn IDs (you can modify this list)

@@ -1,0 +1,1409 @@
+{
+  "rawData": {
+    "status": 200,
+    "likelihood": 9,
+    "data": {
+      "id": "CWxSJMfuBjiDMPLE764Mog_0000",
+      "full_name": "chirag ahuja",
+      "first_name": "chirag",
+      "middle_initial": null,
+      "middle_name": null,
+      "last_initial": "a",
+      "last_name": "ahuja",
+      "sex": "male",
+      "birth_year": false,
+      "birth_date": false,
+      "linkedin_url": "linkedin.com/in/ahujachirag",
+      "linkedin_username": "ahujachirag",
+      "linkedin_id": "165571595",
+      "facebook_url": "facebook.com/ahujachirag",
+      "facebook_username": "ahujachirag",
+      "facebook_id": "100002350149366",
+      "twitter_url": null,
+      "twitter_username": null,
+      "github_url": "github.com/cahuja1992",
+      "github_username": "cahuja1992",
+      "work_email": false,
+      "personal_emails": true,
+      "recommended_personal_email": true,
+      "mobile_phone": false,
+      "industry": "computer software",
+      "job_title": "senior applied scientist - ads",
+      "job_title_role": null,
+      "job_title_sub_role": null,
+      "job_title_class": null,
+      "job_title_levels": [
+        "senior"
+      ],
+      "job_company_id": "hWBI7x4FvSurVNWDXD4uFgQt5ges",
+      "job_company_name": "amazon",
+      "job_company_website": "amazon.com",
+      "job_company_size": "10001+",
+      "job_company_founded": 1994,
+      "job_company_industry": "internet",
+      "job_company_linkedin_url": "linkedin.com/company/amazon",
+      "job_company_linkedin_id": "1586",
+      "job_company_facebook_url": "facebook.com/amazon",
+      "job_company_twitter_url": "twitter.com/amazon",
+      "job_company_location_name": "seattle, washington, united states",
+      "job_company_location_locality": "seattle",
+      "job_company_location_metro": "seattle, washington",
+      "job_company_location_region": "washington",
+      "job_company_location_geo": "47.51,-122.36",
+      "job_company_location_street_address": "2127 7th avenue",
+      "job_company_location_address_line_2": null,
+      "job_company_location_postal_code": "98109",
+      "job_company_location_country": "united states",
+      "job_company_location_continent": "north america",
+      "job_last_changed": "2025-01-17",
+      "job_last_verified": "2025-05-26",
+      "job_start_date": "2024-12",
+      "location_name": true,
+      "location_locality": true,
+      "location_metro": false,
+      "location_region": true,
+      "location_country": "india",
+      "location_continent": "asia",
+      "location_street_address": false,
+      "location_address_line_2": null,
+      "location_postal_code": false,
+      "location_geo": true,
+      "location_last_updated": "2025-05-26",
+      "phone_numbers": false,
+      "emails": true,
+      "interests": [
+        "children",
+        "education",
+        "science and technology"
+      ],
+      "skills": [
+        "agile methodologies",
+        "algorithms",
+        "analytics",
+        "apache kafka",
+        "apache pig",
+        "apache spark",
+        "apache tvm",
+        "applied sciences",
+        "arima",
+        "artificial intelligence",
+        "augmented reality",
+        "automation",
+        "aws sagemaker",
+        "big data",
+        "budgeting",
+        "business requirements",
+        "c",
+        "c++",
+        "code review",
+        "combinatorial optimization",
+        "communication",
+        "computer vision",
+        "contract negotiation",
+        "core java",
+        "cross functional team leadership",
+        "data mining",
+        "data science",
+        "databases",
+        "datasets",
+        "deep learning",
+        "deep reinforcement learning",
+        "delivery of projects",
+        "distributed systems",
+        "docker",
+        "driving results",
+        "edge computing",
+        "elasticsearch",
+        "engineering management",
+        "exponential smoothing",
+        "genetic algorithms",
+        "hadoop",
+        "hbase",
+        "hive",
+        "interpersonal skills",
+        "java",
+        "javascript",
+        "large language models",
+        "leadership",
+        "linear algebra",
+        "machine learning",
+        "mapreduce",
+        "matlab",
+        "microsoft office",
+        "microsoft word",
+        "mlops",
+        "mysql",
+        "natural language processing",
+        "negotiation",
+        "neo4j",
+        "nosql",
+        "oci",
+        "organizational initiatives",
+        "people management",
+        "predictive analytics",
+        "predictive modeling",
+        "presentations",
+        "problem solving",
+        "product demonstration",
+        "product development",
+        "product engineering",
+        "product quality",
+        "programming",
+        "project management",
+        "python",
+        "pytorch",
+        "qiskit",
+        "quality assurance",
+        "quantum computing",
+        "query tuning",
+        "r",
+        "recommender systems",
+        "reinforcement learning",
+        "reliability",
+        "research skills",
+        "robotics",
+        "ros",
+        "rust",
+        "scala",
+        "signal processing",
+        "slam",
+        "software deployment",
+        "software development",
+        "sql",
+        "statistical analysis",
+        "systems design",
+        "tableau",
+        "team building",
+        "team management",
+        "technical architecture",
+        "technical leadership",
+        "technical specs",
+        "tensorflow",
+        "tensorrt",
+        "time series analysis",
+        "timelines",
+        "total cost of ownership",
+        "vendor relations",
+        "visual odometry",
+        "workflow applications",
+        "xla"
+      ],
+      "location_names": true,
+      "regions": true,
+      "countries": [
+        "india"
+      ],
+      "street_addresses": false,
+      "experience": [
+        {
+          "company": {
+            "name": "amazon",
+            "size": "10001+",
+            "id": "hWBI7x4FvSurVNWDXD4uFgQt5ges",
+            "founded": 1994,
+            "industry": "internet",
+            "location": {
+              "name": "seattle, washington, united states",
+              "locality": "seattle",
+              "region": "washington",
+              "metro": "seattle, washington",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "2127 7th avenue",
+              "address_line_2": null,
+              "postal_code": "98109",
+              "geo": "47.51,-122.36"
+            },
+            "linkedin_url": "linkedin.com/company/amazon",
+            "linkedin_id": "1586",
+            "facebook_url": "facebook.com/amazon",
+            "twitter_url": "twitter.com/amazon",
+            "website": "amazon.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": null,
+          "start_date": "2024-12",
+          "title": {
+            "name": "senior applied scientist - ads",
+            "class": null,
+            "role": null,
+            "sub_role": null,
+            "levels": [
+              "senior"
+            ]
+          },
+          "is_primary": true
+        },
+        {
+          "company": {
+            "name": "servicenow",
+            "size": "10001+",
+            "id": "uExrKRA4De9AHrPYs91onQ1lfvbM",
+            "founded": 2004,
+            "industry": "computer software",
+            "location": {
+              "name": "santa clara, california, united states",
+              "locality": "santa clara",
+              "region": "california",
+              "metro": "san jose, california",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "2225 lawson lane",
+              "address_line_2": null,
+              "postal_code": "95054",
+              "geo": "37.35,-121.95"
+            },
+            "linkedin_url": "linkedin.com/company/servicenow",
+            "linkedin_id": "29352",
+            "facebook_url": "facebook.com/servicenow",
+            "twitter_url": "twitter.com/servicenow",
+            "website": "servicenow.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2024-12",
+          "start_date": "2023-11",
+          "title": {
+            "name": "staff machine learning engineer / scientist",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "data_science",
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "oracle",
+            "size": "10001+",
+            "id": "DCD55P9HCbJ6EkJhEdPp0AFqPzf3",
+            "founded": 1977,
+            "industry": "information technology and services",
+            "location": {
+              "name": "austin, texas, united states",
+              "locality": "austin",
+              "region": "texas",
+              "metro": "austin, texas",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "2300 oracle way",
+              "address_line_2": null,
+              "postal_code": "78741",
+              "geo": "30.38,-97.74"
+            },
+            "linkedin_url": "linkedin.com/company/oracle",
+            "linkedin_id": "1028",
+            "facebook_url": "facebook.com/oracle",
+            "twitter_url": "twitter.com/oracle",
+            "website": "oracle.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2023-11",
+          "start_date": "2023-01",
+          "title": {
+            "name": "lead applied scientist - generative ai services",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "data_science",
+            "levels": [
+              "manager"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "oracle",
+            "size": "10001+",
+            "id": "DCD55P9HCbJ6EkJhEdPp0AFqPzf3",
+            "founded": 1977,
+            "industry": "information technology and services",
+            "location": {
+              "name": "austin, texas, united states",
+              "locality": "austin",
+              "region": "texas",
+              "metro": "austin, texas",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "2300 oracle way",
+              "address_line_2": null,
+              "postal_code": "78741",
+              "geo": "30.38,-97.74"
+            },
+            "linkedin_url": "linkedin.com/company/oracle",
+            "linkedin_id": "1028",
+            "facebook_url": "facebook.com/oracle",
+            "twitter_url": "twitter.com/oracle",
+            "website": "oracle.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2023-01",
+          "start_date": "2021-01",
+          "title": {
+            "name": "lead applied scientist - descision services",
+            "class": null,
+            "role": null,
+            "sub_role": null,
+            "levels": [
+              "manager"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "tatras data",
+            "size": "51-200",
+            "id": "U4C4Lyui5F2wFWtfGlmujQUGoND9",
+            "founded": 2012,
+            "industry": "computer software",
+            "location": {
+              "name": "mount pleasant, south carolina, united states",
+              "locality": "mount pleasant",
+              "region": "south carolina",
+              "metro": "charleston, south carolina",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1007 johnnie dodds boulevard",
+              "address_line_2": "suite 120",
+              "postal_code": "29464",
+              "geo": "32.87,-79.78"
+            },
+            "linkedin_url": "linkedin.com/company/tatras-data",
+            "linkedin_id": "2858142",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": "tatrasdata.com"
+          },
+          "location_names": [],
+          "end_date": "2021-01",
+          "start_date": "2020-01",
+          "title": {
+            "name": "senior lead data scientist",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "data_science",
+            "levels": [
+              "senior",
+              "manager"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "visteon corporation",
+            "size": "10001+",
+            "id": "694vC8x6TCkXn58PbdbAtg6xryvO",
+            "founded": 2000,
+            "industry": "automotive",
+            "location": {
+              "name": "commerce township, michigan, united states",
+              "locality": "commerce township",
+              "region": "michigan",
+              "metro": "detroit, michigan",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1 village center drive",
+              "address_line_2": null,
+              "postal_code": "48111",
+              "geo": "42.55,-83.48"
+            },
+            "linkedin_url": "linkedin.com/company/visteon",
+            "linkedin_id": "2865",
+            "facebook_url": "facebook.com/visteoncorporation",
+            "twitter_url": "twitter.com/visteon",
+            "website": "visteon.com"
+          },
+          "location_names": [
+            "pune, maharashtra, india"
+          ],
+          "end_date": "2020-01",
+          "start_date": "2017-10",
+          "title": {
+            "name": "senior data scientist",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "data_science",
+            "levels": [
+              "senior"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "tatras data",
+            "size": "51-200",
+            "id": "U4C4Lyui5F2wFWtfGlmujQUGoND9",
+            "founded": 2012,
+            "industry": "computer software",
+            "location": {
+              "name": "mount pleasant, south carolina, united states",
+              "locality": "mount pleasant",
+              "region": "south carolina",
+              "metro": "charleston, south carolina",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1007 johnnie dodds boulevard",
+              "address_line_2": "suite 120",
+              "postal_code": "29464",
+              "geo": "32.87,-79.78"
+            },
+            "linkedin_url": "linkedin.com/company/tatras-data",
+            "linkedin_id": "2858142",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": "tatrasdata.com"
+          },
+          "location_names": [
+            "new delhi, delhi, india"
+          ],
+          "end_date": "2017-10",
+          "start_date": "2015-04",
+          "title": {
+            "name": "data scientist",
+            "class": "research_and_development",
+            "role": "engineering",
+            "sub_role": "data_science",
+            "levels": []
+          },
+          "is_primary": false
+        }
+      ],
+      "education": [
+        {
+          "school": {
+            "name": "delhi technological university (formerly dce)",
+            "type": "post-secondary institution",
+            "id": "Wzn70avAuF4EkZWioVlH-g_0",
+            "location": {
+              "name": "delhi, delhi, india",
+              "locality": "delhi",
+              "region": "delhi",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/delhi-technological-university-formerly-dce",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "31053886",
+            "website": "dtu.ac.in",
+            "domain": "dtu.ac.in"
+          },
+          "degrees": [
+            "doctorates",
+            "doctor of philosophy"
+          ],
+          "start_date": "2020",
+          "end_date": "2024",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "udacity",
+            "type": "post-secondary institution",
+            "id": "khR3nWdBPGfGAPfo34rB3w_0",
+            "location": {
+              "name": "mountain view, california, united states",
+              "locality": "mountain view",
+              "region": "california",
+              "country": "united states",
+              "continent": "north america"
+            },
+            "linkedin_url": "linkedin.com/school/udacity",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "2475568",
+            "website": "udacity.com",
+            "domain": "udacity.com"
+          },
+          "degrees": [],
+          "start_date": "2016",
+          "end_date": "2016",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "gautam buddha university",
+            "type": "post-secondary institution",
+            "id": "vYvHqnzhN4-H3mUQbH-Aow_0",
+            "location": {
+              "name": "yamuna kinara, uttar pradesh, india",
+              "locality": "yamuna kinara",
+              "region": "uttar pradesh",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/gautam-buddha-university",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "15098413",
+            "website": "gbu.ac.in",
+            "domain": "gbu.ac.in"
+          },
+          "degrees": [
+            "bachelor of technology",
+            "masters",
+            "bachelors",
+            "master of technology"
+          ],
+          "start_date": "2010",
+          "end_date": "2015",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "bal bharati public school",
+            "type": "post-secondary institution",
+            "id": "36to0SKDmHgQjguxCBWyIA_0",
+            "location": {
+              "name": "new delhi, delhi, india",
+              "locality": "new delhi",
+              "region": "delhi",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/bbps-school",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "84979218",
+            "website": "balbharati.org",
+            "domain": "balbharati.org"
+          },
+          "degrees": [],
+          "start_date": "1995",
+          "end_date": "2010",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "gautam buddha university",
+            "type": "post-secondary institution",
+            "id": "vYvHqnzhN4-H3mUQbH-Aow_0",
+            "location": {
+              "name": "yamuna kinara, uttar pradesh, india",
+              "locality": "yamuna kinara",
+              "region": "uttar pradesh",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/gautam-buddha-university",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "15098413",
+            "website": "gbu.ac.in",
+            "domain": "gbu.ac.in"
+          },
+          "degrees": [
+            "bachelor of technology",
+            "bachelors"
+          ],
+          "start_date": null,
+          "end_date": "2015",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "bal bharati public school",
+            "type": "post-secondary institution",
+            "id": "36to0SKDmHgQjguxCBWyIA_0",
+            "location": {
+              "name": "new delhi, delhi, india",
+              "locality": "new delhi",
+              "region": "delhi",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/bbps-school",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "84979218",
+            "website": "balbharati.org",
+            "domain": "balbharati.org"
+          },
+          "degrees": [],
+          "start_date": null,
+          "end_date": "1995",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "gautam buddha university",
+            "type": "post-secondary institution",
+            "id": "vYvHqnzhN4-H3mUQbH-Aow_0",
+            "location": {
+              "name": "yamuna kinara, uttar pradesh, india",
+              "locality": "yamuna kinara",
+              "region": "uttar pradesh",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/gautam-buddha-university",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "15098413",
+            "website": "gbu.ac.in",
+            "domain": "gbu.ac.in"
+          },
+          "degrees": [],
+          "start_date": null,
+          "end_date": null,
+          "majors": [
+            "robotics"
+          ],
+          "minors": [],
+          "gpa": null
+        }
+      ],
+      "profiles": [
+        {
+          "network": "linkedin",
+          "id": "165571595",
+          "url": "linkedin.com/in/ahujachirag",
+          "username": "ahujachirag"
+        },
+        {
+          "network": "facebook",
+          "id": "100002350149366",
+          "url": "facebook.com/ahujachirag",
+          "username": "ahujachirag"
+        },
+        {
+          "network": "github",
+          "id": null,
+          "url": "github.com/cahuja1992",
+          "username": "cahuja1992"
+        },
+        {
+          "network": "angellist",
+          "id": null,
+          "url": "angel.co/chirag-ahuja",
+          "username": "chirag-ahuja"
+        }
+      ],
+      "dataset_version": "31.0"
+    }
+  },
+  "data": {
+    "id": "CWxSJMfuBjiDMPLE764Mog_0000",
+    "full_name": "chirag ahuja",
+    "first_name": "chirag",
+    "middle_initial": null,
+    "middle_name": null,
+    "last_initial": "a",
+    "last_name": "ahuja",
+    "sex": "male",
+    "birth_year": false,
+    "birth_date": false,
+    "linkedin_url": "linkedin.com/in/ahujachirag",
+    "linkedin_username": "ahujachirag",
+    "linkedin_id": "165571595",
+    "facebook_url": "facebook.com/ahujachirag",
+    "facebook_username": "ahujachirag",
+    "facebook_id": "100002350149366",
+    "twitter_url": null,
+    "twitter_username": null,
+    "github_url": "github.com/cahuja1992",
+    "github_username": "cahuja1992",
+    "work_email": false,
+    "personal_emails": true,
+    "recommended_personal_email": true,
+    "mobile_phone": false,
+    "industry": "computer software",
+    "job_title": "senior applied scientist - ads",
+    "job_title_role": null,
+    "job_title_sub_role": null,
+    "job_title_class": null,
+    "job_title_levels": [
+      "senior"
+    ],
+    "job_company_id": "hWBI7x4FvSurVNWDXD4uFgQt5ges",
+    "job_company_name": "amazon",
+    "job_company_website": "amazon.com",
+    "job_company_size": "10001+",
+    "job_company_founded": 1994,
+    "job_company_industry": "internet",
+    "job_company_linkedin_url": "linkedin.com/company/amazon",
+    "job_company_linkedin_id": "1586",
+    "job_company_facebook_url": "facebook.com/amazon",
+    "job_company_twitter_url": "twitter.com/amazon",
+    "job_company_location_name": "seattle, washington, united states",
+    "job_company_location_locality": "seattle",
+    "job_company_location_metro": "seattle, washington",
+    "job_company_location_region": "washington",
+    "job_company_location_geo": "47.51,-122.36",
+    "job_company_location_street_address": "2127 7th avenue",
+    "job_company_location_address_line_2": null,
+    "job_company_location_postal_code": "98109",
+    "job_company_location_country": "united states",
+    "job_company_location_continent": "north america",
+    "job_last_changed": "2025-01-17",
+    "job_last_verified": "2025-05-26",
+    "job_start_date": "2024-12",
+    "location_name": true,
+    "location_locality": true,
+    "location_metro": false,
+    "location_region": true,
+    "location_country": "india",
+    "location_continent": "asia",
+    "location_street_address": false,
+    "location_address_line_2": null,
+    "location_postal_code": false,
+    "location_geo": true,
+    "location_last_updated": "2025-05-26",
+    "phone_numbers": false,
+    "emails": true,
+    "interests": [
+      "children",
+      "education",
+      "science and technology"
+    ],
+    "skills": [
+      "agile methodologies",
+      "algorithms",
+      "analytics",
+      "apache kafka",
+      "apache pig",
+      "apache spark",
+      "apache tvm",
+      "applied sciences",
+      "arima",
+      "artificial intelligence",
+      "augmented reality",
+      "automation",
+      "aws sagemaker",
+      "big data",
+      "budgeting",
+      "business requirements",
+      "c",
+      "c++",
+      "code review",
+      "combinatorial optimization",
+      "communication",
+      "computer vision",
+      "contract negotiation",
+      "core java",
+      "cross functional team leadership",
+      "data mining",
+      "data science",
+      "databases",
+      "datasets",
+      "deep learning",
+      "deep reinforcement learning",
+      "delivery of projects",
+      "distributed systems",
+      "docker",
+      "driving results",
+      "edge computing",
+      "elasticsearch",
+      "engineering management",
+      "exponential smoothing",
+      "genetic algorithms",
+      "hadoop",
+      "hbase",
+      "hive",
+      "interpersonal skills",
+      "java",
+      "javascript",
+      "large language models",
+      "leadership",
+      "linear algebra",
+      "machine learning",
+      "mapreduce",
+      "matlab",
+      "microsoft office",
+      "microsoft word",
+      "mlops",
+      "mysql",
+      "natural language processing",
+      "negotiation",
+      "neo4j",
+      "nosql",
+      "oci",
+      "organizational initiatives",
+      "people management",
+      "predictive analytics",
+      "predictive modeling",
+      "presentations",
+      "problem solving",
+      "product demonstration",
+      "product development",
+      "product engineering",
+      "product quality",
+      "programming",
+      "project management",
+      "python",
+      "pytorch",
+      "qiskit",
+      "quality assurance",
+      "quantum computing",
+      "query tuning",
+      "r",
+      "recommender systems",
+      "reinforcement learning",
+      "reliability",
+      "research skills",
+      "robotics",
+      "ros",
+      "rust",
+      "scala",
+      "signal processing",
+      "slam",
+      "software deployment",
+      "software development",
+      "sql",
+      "statistical analysis",
+      "systems design",
+      "tableau",
+      "team building",
+      "team management",
+      "technical architecture",
+      "technical leadership",
+      "technical specs",
+      "tensorflow",
+      "tensorrt",
+      "time series analysis",
+      "timelines",
+      "total cost of ownership",
+      "vendor relations",
+      "visual odometry",
+      "workflow applications",
+      "xla"
+    ],
+    "location_names": true,
+    "regions": true,
+    "countries": [
+      "india"
+    ],
+    "street_addresses": false,
+    "experience": [
+      {
+        "company": {
+          "name": "amazon",
+          "size": "10001+",
+          "id": "hWBI7x4FvSurVNWDXD4uFgQt5ges",
+          "founded": 1994,
+          "industry": "internet",
+          "location": {
+            "name": "seattle, washington, united states",
+            "locality": "seattle",
+            "region": "washington",
+            "metro": "seattle, washington",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "2127 7th avenue",
+            "address_line_2": null,
+            "postal_code": "98109",
+            "geo": "47.51,-122.36"
+          },
+          "linkedin_url": "linkedin.com/company/amazon",
+          "linkedin_id": "1586",
+          "facebook_url": "facebook.com/amazon",
+          "twitter_url": "twitter.com/amazon",
+          "website": "amazon.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": null,
+        "start_date": "2024-12",
+        "title": {
+          "name": "senior applied scientist - ads",
+          "class": null,
+          "role": null,
+          "sub_role": null,
+          "levels": [
+            "senior"
+          ]
+        },
+        "is_primary": true
+      },
+      {
+        "company": {
+          "name": "servicenow",
+          "size": "10001+",
+          "id": "uExrKRA4De9AHrPYs91onQ1lfvbM",
+          "founded": 2004,
+          "industry": "computer software",
+          "location": {
+            "name": "santa clara, california, united states",
+            "locality": "santa clara",
+            "region": "california",
+            "metro": "san jose, california",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "2225 lawson lane",
+            "address_line_2": null,
+            "postal_code": "95054",
+            "geo": "37.35,-121.95"
+          },
+          "linkedin_url": "linkedin.com/company/servicenow",
+          "linkedin_id": "29352",
+          "facebook_url": "facebook.com/servicenow",
+          "twitter_url": "twitter.com/servicenow",
+          "website": "servicenow.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2024-12",
+        "start_date": "2023-11",
+        "title": {
+          "name": "staff machine learning engineer / scientist",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "data_science",
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "oracle",
+          "size": "10001+",
+          "id": "DCD55P9HCbJ6EkJhEdPp0AFqPzf3",
+          "founded": 1977,
+          "industry": "information technology and services",
+          "location": {
+            "name": "austin, texas, united states",
+            "locality": "austin",
+            "region": "texas",
+            "metro": "austin, texas",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "2300 oracle way",
+            "address_line_2": null,
+            "postal_code": "78741",
+            "geo": "30.38,-97.74"
+          },
+          "linkedin_url": "linkedin.com/company/oracle",
+          "linkedin_id": "1028",
+          "facebook_url": "facebook.com/oracle",
+          "twitter_url": "twitter.com/oracle",
+          "website": "oracle.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2023-11",
+        "start_date": "2023-01",
+        "title": {
+          "name": "lead applied scientist - generative ai services",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "data_science",
+          "levels": [
+            "manager"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "oracle",
+          "size": "10001+",
+          "id": "DCD55P9HCbJ6EkJhEdPp0AFqPzf3",
+          "founded": 1977,
+          "industry": "information technology and services",
+          "location": {
+            "name": "austin, texas, united states",
+            "locality": "austin",
+            "region": "texas",
+            "metro": "austin, texas",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "2300 oracle way",
+            "address_line_2": null,
+            "postal_code": "78741",
+            "geo": "30.38,-97.74"
+          },
+          "linkedin_url": "linkedin.com/company/oracle",
+          "linkedin_id": "1028",
+          "facebook_url": "facebook.com/oracle",
+          "twitter_url": "twitter.com/oracle",
+          "website": "oracle.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2023-01",
+        "start_date": "2021-01",
+        "title": {
+          "name": "lead applied scientist - descision services",
+          "class": null,
+          "role": null,
+          "sub_role": null,
+          "levels": [
+            "manager"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "tatras data",
+          "size": "51-200",
+          "id": "U4C4Lyui5F2wFWtfGlmujQUGoND9",
+          "founded": 2012,
+          "industry": "computer software",
+          "location": {
+            "name": "mount pleasant, south carolina, united states",
+            "locality": "mount pleasant",
+            "region": "south carolina",
+            "metro": "charleston, south carolina",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1007 johnnie dodds boulevard",
+            "address_line_2": "suite 120",
+            "postal_code": "29464",
+            "geo": "32.87,-79.78"
+          },
+          "linkedin_url": "linkedin.com/company/tatras-data",
+          "linkedin_id": "2858142",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": "tatrasdata.com"
+        },
+        "location_names": [],
+        "end_date": "2021-01",
+        "start_date": "2020-01",
+        "title": {
+          "name": "senior lead data scientist",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "data_science",
+          "levels": [
+            "senior",
+            "manager"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "visteon corporation",
+          "size": "10001+",
+          "id": "694vC8x6TCkXn58PbdbAtg6xryvO",
+          "founded": 2000,
+          "industry": "automotive",
+          "location": {
+            "name": "commerce township, michigan, united states",
+            "locality": "commerce township",
+            "region": "michigan",
+            "metro": "detroit, michigan",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1 village center drive",
+            "address_line_2": null,
+            "postal_code": "48111",
+            "geo": "42.55,-83.48"
+          },
+          "linkedin_url": "linkedin.com/company/visteon",
+          "linkedin_id": "2865",
+          "facebook_url": "facebook.com/visteoncorporation",
+          "twitter_url": "twitter.com/visteon",
+          "website": "visteon.com"
+        },
+        "location_names": [
+          "pune, maharashtra, india"
+        ],
+        "end_date": "2020-01",
+        "start_date": "2017-10",
+        "title": {
+          "name": "senior data scientist",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "data_science",
+          "levels": [
+            "senior"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "tatras data",
+          "size": "51-200",
+          "id": "U4C4Lyui5F2wFWtfGlmujQUGoND9",
+          "founded": 2012,
+          "industry": "computer software",
+          "location": {
+            "name": "mount pleasant, south carolina, united states",
+            "locality": "mount pleasant",
+            "region": "south carolina",
+            "metro": "charleston, south carolina",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1007 johnnie dodds boulevard",
+            "address_line_2": "suite 120",
+            "postal_code": "29464",
+            "geo": "32.87,-79.78"
+          },
+          "linkedin_url": "linkedin.com/company/tatras-data",
+          "linkedin_id": "2858142",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": "tatrasdata.com"
+        },
+        "location_names": [
+          "new delhi, delhi, india"
+        ],
+        "end_date": "2017-10",
+        "start_date": "2015-04",
+        "title": {
+          "name": "data scientist",
+          "class": "research_and_development",
+          "role": "engineering",
+          "sub_role": "data_science",
+          "levels": []
+        },
+        "is_primary": false
+      }
+    ],
+    "education": [
+      {
+        "school": {
+          "name": "delhi technological university (formerly dce)",
+          "type": "post-secondary institution",
+          "id": "Wzn70avAuF4EkZWioVlH-g_0",
+          "location": {
+            "name": "delhi, delhi, india",
+            "locality": "delhi",
+            "region": "delhi",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/delhi-technological-university-formerly-dce",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "31053886",
+          "website": "dtu.ac.in",
+          "domain": "dtu.ac.in"
+        },
+        "degrees": [
+          "doctorates",
+          "doctor of philosophy"
+        ],
+        "start_date": "2020",
+        "end_date": "2024",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "udacity",
+          "type": "post-secondary institution",
+          "id": "khR3nWdBPGfGAPfo34rB3w_0",
+          "location": {
+            "name": "mountain view, california, united states",
+            "locality": "mountain view",
+            "region": "california",
+            "country": "united states",
+            "continent": "north america"
+          },
+          "linkedin_url": "linkedin.com/school/udacity",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "2475568",
+          "website": "udacity.com",
+          "domain": "udacity.com"
+        },
+        "degrees": [],
+        "start_date": "2016",
+        "end_date": "2016",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "gautam buddha university",
+          "type": "post-secondary institution",
+          "id": "vYvHqnzhN4-H3mUQbH-Aow_0",
+          "location": {
+            "name": "yamuna kinara, uttar pradesh, india",
+            "locality": "yamuna kinara",
+            "region": "uttar pradesh",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/gautam-buddha-university",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "15098413",
+          "website": "gbu.ac.in",
+          "domain": "gbu.ac.in"
+        },
+        "degrees": [
+          "bachelor of technology",
+          "masters",
+          "bachelors",
+          "master of technology"
+        ],
+        "start_date": "2010",
+        "end_date": "2015",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "bal bharati public school",
+          "type": "post-secondary institution",
+          "id": "36to0SKDmHgQjguxCBWyIA_0",
+          "location": {
+            "name": "new delhi, delhi, india",
+            "locality": "new delhi",
+            "region": "delhi",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/bbps-school",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "84979218",
+          "website": "balbharati.org",
+          "domain": "balbharati.org"
+        },
+        "degrees": [],
+        "start_date": "1995",
+        "end_date": "2010",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "gautam buddha university",
+          "type": "post-secondary institution",
+          "id": "vYvHqnzhN4-H3mUQbH-Aow_0",
+          "location": {
+            "name": "yamuna kinara, uttar pradesh, india",
+            "locality": "yamuna kinara",
+            "region": "uttar pradesh",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/gautam-buddha-university",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "15098413",
+          "website": "gbu.ac.in",
+          "domain": "gbu.ac.in"
+        },
+        "degrees": [
+          "bachelor of technology",
+          "bachelors"
+        ],
+        "start_date": null,
+        "end_date": "2015",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "bal bharati public school",
+          "type": "post-secondary institution",
+          "id": "36to0SKDmHgQjguxCBWyIA_0",
+          "location": {
+            "name": "new delhi, delhi, india",
+            "locality": "new delhi",
+            "region": "delhi",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/bbps-school",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "84979218",
+          "website": "balbharati.org",
+          "domain": "balbharati.org"
+        },
+        "degrees": [],
+        "start_date": null,
+        "end_date": "1995",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "gautam buddha university",
+          "type": "post-secondary institution",
+          "id": "vYvHqnzhN4-H3mUQbH-Aow_0",
+          "location": {
+            "name": "yamuna kinara, uttar pradesh, india",
+            "locality": "yamuna kinara",
+            "region": "uttar pradesh",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/gautam-buddha-university",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "15098413",
+          "website": "gbu.ac.in",
+          "domain": "gbu.ac.in"
+        },
+        "degrees": [],
+        "start_date": null,
+        "end_date": null,
+        "majors": [
+          "robotics"
+        ],
+        "minors": [],
+        "gpa": null
+      }
+    ],
+    "profiles": [
+      {
+        "network": "linkedin",
+        "id": "165571595",
+        "url": "linkedin.com/in/ahujachirag",
+        "username": "ahujachirag"
+      },
+      {
+        "network": "facebook",
+        "id": "100002350149366",
+        "url": "facebook.com/ahujachirag",
+        "username": "ahujachirag"
+      },
+      {
+        "network": "github",
+        "id": null,
+        "url": "github.com/cahuja1992",
+        "username": "cahuja1992"
+      },
+      {
+        "network": "angellist",
+        "id": null,
+        "url": "angel.co/chirag-ahuja",
+        "username": "chirag-ahuja"
+      }
+    ],
+    "dataset_version": "31.0"
+  },
+  "fetchedAt": "2025-07-22T11:43:24.065Z"
+}

@@ -11,6 +11,7 @@ const { parseWorkExperience } = require('../utils/workExperienceParser');
 const { parseGitHub } = require('../utils/githubParser');
 const { calculateTotalScore } = require('../utils/scoringEngine');
 const { formatLinkedInProfile, createProfileSummary, getProfileStats } = require('../utils/linkedinFormatter');
+const { getCachedProfile, setCachedProfile } = require('../utils/linkedinCache');
 
 const router = express.Router();
 
@@ -456,16 +457,29 @@ async function evaluateLinkedInProfile(linkedinId, weights = null) {
 }
 
 // People Data Labs API configuration
-const PDL_API_KEY = '1316db092be5b196d4894b92398ccd054a5c2f81737a05c28fc2e3d1ed01763f';
+const { PDL_API_KEY } = require('../config/apiKeys');
 const PDL_BASE_URL = 'https://api.peopledatalabs.com/v5/person/enrich';
 
 /**
- * Fetch LinkedIn profile data using People Data Labs API
+ * Fetch LinkedIn profile data using People Data Labs API with caching
  * @param {string} linkedinId - LinkedIn ID (without linkedin.com/in/)
- * @returns {Promise<object>} Profile data from PDL API
+ * @returns {Promise<object>} Profile data from PDL API or cache
  */
 async function fetchLinkedInProfile(linkedinId) {
   console.log(`🔍 Fetching LinkedIn profile: ${linkedinId}`);
+  
+  // Check cache first
+  const cachedProfile = getCachedProfile(linkedinId);
+  if (cachedProfile) {
+    console.log(`💾 Using cached LinkedIn profile: ${linkedinId}`);
+    return {
+      linkedinId,
+      success: true,
+      data: cachedProfile.data,
+      error: null,
+      fromCache: true
+    };
+  }
   
   try {
     const response = await axios.get(PDL_BASE_URL, {
@@ -480,11 +494,20 @@ async function fetchLinkedInProfile(linkedinId) {
 
     if (response.data && response.data.status === 200) {
       console.log(`✅ Successfully fetched profile for: ${linkedinId}`);
+      
+      // Cache the successful result
+      setCachedProfile(linkedinId, {
+        rawData: response.data,
+        data: response.data.data,
+        fetchedAt: new Date().toISOString()
+      });
+      
       return {
         linkedinId,
         success: true,
         data: response.data.data,
-        error: null
+        error: null,
+        fromCache: false
       };
     } else {
       console.log(`⚠️ Profile not found for: ${linkedinId}`);
@@ -492,16 +515,36 @@ async function fetchLinkedInProfile(linkedinId) {
         linkedinId,
         success: false,
         data: null,
-        error: 'Profile not found'
+        error: 'Profile not found',
+        fromCache: false
       };
     }
   } catch (error) {
     console.error(`❌ Error fetching profile for ${linkedinId}:`, error.message);
+    
+    // If API fails but we have a cached version, use it as fallback
+    if (error.response?.status === 402 || error.response?.status === 429) {
+      console.log(`🔄 API limit reached, checking for any cached version...`);
+      const cachedProfile = getCachedProfile(linkedinId);
+      if (cachedProfile) {
+        console.log(`💾 Using cached LinkedIn profile as fallback: ${linkedinId}`);
+        return {
+          linkedinId,
+          success: true,
+          data: cachedProfile.data,
+          error: null,
+          fromCache: true,
+          fallback: true
+        };
+      }
+    }
+    
     return {
       linkedinId,
       success: false,
       data: null,
-      error: error.message
+      error: error.message,
+      fromCache: false
     };
   }
 }

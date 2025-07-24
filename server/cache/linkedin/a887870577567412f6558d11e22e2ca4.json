@@ -1,0 +1,1325 @@
+{
+  "rawData": {
+    "status": 200,
+    "likelihood": 9,
+    "data": {
+      "id": "KhgzL4LSEwEIlzyxFPaMrw_0000",
+      "full_name": "partha talukdar",
+      "first_name": "partha",
+      "middle_initial": "p",
+      "middle_name": "pratim",
+      "last_initial": "t",
+      "last_name": "talukdar",
+      "sex": "male",
+      "birth_year": false,
+      "birth_date": false,
+      "linkedin_url": "linkedin.com/in/parthapratimtalukdar",
+      "linkedin_username": "parthapratimtalukdar",
+      "linkedin_id": "40340269",
+      "facebook_url": null,
+      "facebook_username": null,
+      "facebook_id": null,
+      "twitter_url": null,
+      "twitter_username": null,
+      "github_url": "github.com/parthatalukdar",
+      "github_username": "parthatalukdar",
+      "work_email": false,
+      "personal_emails": true,
+      "recommended_personal_email": true,
+      "mobile_phone": true,
+      "industry": "research",
+      "job_title": "research scientist and manager",
+      "job_title_role": "research",
+      "job_title_sub_role": null,
+      "job_title_class": "research_and_development",
+      "job_title_levels": [
+        "manager"
+      ],
+      "job_company_id": "StyaWCIGgDNCuBaCNAhGWwCKPEQb",
+      "job_company_name": "google deepmind",
+      "job_company_website": "deepmind.com",
+      "job_company_size": "501-1000",
+      "job_company_founded": 2010,
+      "job_company_industry": "research",
+      "job_company_linkedin_url": "linkedin.com/company/googledeepmind",
+      "job_company_linkedin_id": "1594050",
+      "job_company_facebook_url": null,
+      "job_company_twitter_url": "twitter.com/deepmindai",
+      "job_company_location_name": "london, england, united kingdom",
+      "job_company_location_locality": "london",
+      "job_company_location_metro": null,
+      "job_company_location_region": "england",
+      "job_company_location_geo": "51.46,-0.20",
+      "job_company_location_street_address": null,
+      "job_company_location_address_line_2": null,
+      "job_company_location_postal_code": "n1c 4ag",
+      "job_company_location_country": "united kingdom",
+      "job_company_location_continent": "europe",
+      "job_last_changed": "2024-09-30",
+      "job_last_verified": "2025-06-19",
+      "job_start_date": "2024-05",
+      "location_name": true,
+      "location_locality": true,
+      "location_metro": false,
+      "location_region": true,
+      "location_country": "india",
+      "location_continent": "asia",
+      "location_street_address": false,
+      "location_address_line_2": null,
+      "location_postal_code": false,
+      "location_geo": true,
+      "location_last_updated": "2025-06-19",
+      "phone_numbers": true,
+      "emails": true,
+      "interests": [],
+      "skills": [
+        "algorithms",
+        "artificial intelligence",
+        "c++",
+        "computational linguistics",
+        "computer science",
+        "data mining",
+        "distributed systems",
+        "information extraction",
+        "java",
+        "latex",
+        "machine learning",
+        "natural language processing",
+        "pattern recognition",
+        "programming",
+        "python",
+        "semantics",
+        "text mining"
+      ],
+      "location_names": true,
+      "regions": true,
+      "countries": [
+        "india"
+      ],
+      "street_addresses": false,
+      "experience": [
+        {
+          "company": {
+            "name": "google deepmind",
+            "size": "501-1000",
+            "id": "StyaWCIGgDNCuBaCNAhGWwCKPEQb",
+            "founded": 2010,
+            "industry": "research",
+            "location": {
+              "name": "london, england, united kingdom",
+              "locality": "london",
+              "region": "england",
+              "metro": null,
+              "country": "united kingdom",
+              "continent": "europe",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "n1c 4ag",
+              "geo": "51.46,-0.20"
+            },
+            "linkedin_url": "linkedin.com/company/googledeepmind",
+            "linkedin_id": "1594050",
+            "facebook_url": null,
+            "twitter_url": "twitter.com/deepmindai",
+            "website": "deepmind.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": null,
+          "start_date": "2024-05",
+          "title": {
+            "name": "research scientist and manager",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": [
+              "manager"
+            ]
+          },
+          "is_primary": true
+        },
+        {
+          "company": {
+            "name": "google",
+            "size": "10001+",
+            "id": "aKCIYBNF9ey6o5CjHCCO4goHYKlf",
+            "founded": 1998,
+            "industry": "internet",
+            "location": {
+              "name": "mountain view, california, united states",
+              "locality": "mountain view",
+              "region": "california",
+              "metro": "san jose, california",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1600 amphitheatre parkway",
+              "address_line_2": null,
+              "postal_code": "94043",
+              "geo": "37.39,-122.06"
+            },
+            "linkedin_url": "linkedin.com/company/google",
+            "linkedin_id": "1441",
+            "facebook_url": "facebook.com/google",
+            "twitter_url": "twitter.com/google",
+            "website": "google.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2024-05",
+          "start_date": "2020-04",
+          "title": {
+            "name": "research scientist and manager",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": [
+              "manager"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "indian institute of science",
+            "size": "1001-5000",
+            "id": "nosesoGKzhfAOvvkOWftWg1ePDfo",
+            "founded": 1909,
+            "industry": "research",
+            "location": {
+              "name": "bangalore, karnataka, india",
+              "locality": "bangalore",
+              "region": "karnataka",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "560012",
+              "geo": "12.97,77.59"
+            },
+            "linkedin_url": "linkedin.com/company/indian-institute-of-science",
+            "linkedin_id": "164340",
+            "facebook_url": "facebook.com/iiscbangalore",
+            "twitter_url": "twitter.com/iiscbangalore",
+            "website": "iisc.ac.in"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": null,
+          "start_date": "2019-12",
+          "title": {
+            "name": "associate professor",
+            "class": "services",
+            "role": "education",
+            "sub_role": "professor",
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "kenome",
+            "size": "1-10",
+            "id": "kWsU6Kz0LfHSBm2lg1irmwrqAcn4",
+            "founded": 2017,
+            "industry": "computer software",
+            "location": {
+              "name": "wilson garden, karnataka, india",
+              "locality": "wilson garden",
+              "region": "karnataka",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "560027",
+              "geo": "13.22,77.57"
+            },
+            "linkedin_url": "linkedin.com/company/kenome",
+            "linkedin_id": "14408800",
+            "facebook_url": "facebook.com/kenome",
+            "twitter_url": "twitter.com/kenomeio",
+            "website": "kenome.io"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2020-03",
+          "start_date": "2017-09",
+          "title": {
+            "name": "founder",
+            "class": "general_and_administrative",
+            "role": "operations",
+            "sub_role": "executive",
+            "levels": [
+              "owner"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "indian institute of science",
+            "size": "1001-5000",
+            "id": "nosesoGKzhfAOvvkOWftWg1ePDfo",
+            "founded": 1909,
+            "industry": "research",
+            "location": {
+              "name": "bangalore, karnataka, india",
+              "locality": "bangalore",
+              "region": "karnataka",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "560012",
+              "geo": "12.97,77.59"
+            },
+            "linkedin_url": "linkedin.com/company/indian-institute-of-science",
+            "linkedin_id": "164340",
+            "facebook_url": "facebook.com/iiscbangalore",
+            "twitter_url": "twitter.com/iiscbangalore",
+            "website": "iisc.ac.in"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2019-12",
+          "start_date": "2014-07",
+          "title": {
+            "name": "assistant professor",
+            "class": "services",
+            "role": "education",
+            "sub_role": "professor",
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "carnegie mellon university",
+            "size": "5001-10000",
+            "id": "H4owLqEpmhyKxWbjuVfgSwDJUWbL",
+            "founded": 1900,
+            "industry": "higher education",
+            "location": {
+              "name": "pittsburgh, pennsylvania, united states",
+              "locality": "pittsburgh",
+              "region": "pennsylvania",
+              "metro": "pittsburgh, pennsylvania",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "5000 forbes avenue",
+              "address_line_2": null,
+              "postal_code": "15213",
+              "geo": "40.41,-80.02"
+            },
+            "linkedin_url": "linkedin.com/company/carnegie-mellon-university",
+            "linkedin_id": "3147",
+            "facebook_url": "facebook.com/carnegiemellonu",
+            "twitter_url": "twitter.com/carnegiemellon",
+            "website": "cmu.edu"
+          },
+          "location_names": [
+            "pittsburgh, pennsylvania, united states"
+          ],
+          "end_date": "2014-05",
+          "start_date": "2011-05",
+          "title": {
+            "name": "post doctoral fellow, machine learning department",
+            "class": null,
+            "role": null,
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "microsoft",
+            "size": "10001+",
+            "id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+            "founded": 1975,
+            "industry": "computer software",
+            "location": {
+              "name": "redmond, washington, united states",
+              "locality": "redmond",
+              "region": "washington",
+              "metro": "seattle, washington",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1 microsoft way",
+              "address_line_2": null,
+              "postal_code": "98052",
+              "geo": "47.67,-122.10"
+            },
+            "linkedin_url": "linkedin.com/company/microsoft",
+            "linkedin_id": "1035",
+            "facebook_url": "facebook.com/microsoft",
+            "twitter_url": "twitter.com/microsoft",
+            "website": "microsoft.com"
+          },
+          "location_names": [],
+          "end_date": "2011-03",
+          "start_date": "2010-03",
+          "title": {
+            "name": "visiting research scientist",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "google",
+            "size": "10001+",
+            "id": "aKCIYBNF9ey6o5CjHCCO4goHYKlf",
+            "founded": 1998,
+            "industry": "internet",
+            "location": {
+              "name": "mountain view, california, united states",
+              "locality": "mountain view",
+              "region": "california",
+              "metro": "san jose, california",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1600 amphitheatre parkway",
+              "address_line_2": null,
+              "postal_code": "94043",
+              "geo": "37.39,-122.06"
+            },
+            "linkedin_url": "linkedin.com/company/google",
+            "linkedin_id": "1441",
+            "facebook_url": "facebook.com/google",
+            "twitter_url": "twitter.com/google",
+            "website": "google.com"
+          },
+          "location_names": [],
+          "end_date": "2008-12",
+          "start_date": "2008-05",
+          "title": {
+            "name": "research intern",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": [
+              "training"
+            ]
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "the wharton school",
+            "size": "501-1000",
+            "id": "CpazhtlDcT9Iqes8fyoVVwnjkHff",
+            "founded": 1881,
+            "industry": "higher education",
+            "location": {
+              "name": "philadelphia, pennsylvania, united states",
+              "locality": "philadelphia",
+              "region": "pennsylvania",
+              "metro": "philadelphia, pennsylvania",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "19104",
+              "geo": "40.00,-75.13"
+            },
+            "linkedin_url": "linkedin.com/company/the-wharton-school",
+            "linkedin_id": "5290",
+            "facebook_url": "facebook.com/whartonschool",
+            "twitter_url": "twitter.com/wharton",
+            "website": "wharton.upenn.edu"
+          },
+          "location_names": [],
+          "end_date": "2007-05",
+          "start_date": "2007-01",
+          "title": {
+            "name": "research fellow",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": "academic",
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "hewlett packard enterprise",
+            "size": "10001+",
+            "id": "EyWCGfUy1Xf29qBoP2TW8ATRRvMt",
+            "founded": 1939,
+            "industry": "information technology and services",
+            "location": {
+              "name": "houston, texas, united states",
+              "locality": "houston",
+              "region": "texas",
+              "metro": null,
+              "country": "united states",
+              "continent": null,
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": null,
+              "geo": null
+            },
+            "linkedin_url": "linkedin.com/company/hewlett-packard-enterprise",
+            "linkedin_id": "1025",
+            "facebook_url": "facebook.com/hewlettpackardenterprise",
+            "twitter_url": "twitter.com/hpe",
+            "website": "hpe.com"
+          },
+          "location_names": [],
+          "end_date": "2004-06",
+          "start_date": "2003-07",
+          "title": {
+            "name": "research engineer",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "indian institute of science",
+            "size": "1001-5000",
+            "id": "nosesoGKzhfAOvvkOWftWg1ePDfo",
+            "founded": 1909,
+            "industry": "research",
+            "location": {
+              "name": "bangalore, karnataka, india",
+              "locality": "bangalore",
+              "region": "karnataka",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "560012",
+              "geo": "12.97,77.59"
+            },
+            "linkedin_url": "linkedin.com/company/indian-institute-of-science",
+            "linkedin_id": "164340",
+            "facebook_url": "facebook.com/iiscbangalore",
+            "twitter_url": "twitter.com/iiscbangalore",
+            "website": "iisc.ac.in"
+          },
+          "location_names": [],
+          "end_date": "2002-08",
+          "start_date": "2002-06",
+          "title": {
+            "name": "fellowship student",
+            "class": "services",
+            "role": "education",
+            "sub_role": "student",
+            "levels": []
+          },
+          "is_primary": false
+        }
+      ],
+      "education": [
+        {
+          "school": {
+            "name": "university of pennsylvania",
+            "type": "post-secondary institution",
+            "id": "spmthitvEstXZ58FOOylFA_0",
+            "location": {
+              "name": "philadelphia, pennsylvania, united states",
+              "locality": "philadelphia",
+              "region": "pennsylvania",
+              "country": "united states",
+              "continent": "north america"
+            },
+            "linkedin_url": "linkedin.com/school/university-of-pennsylvania",
+            "facebook_url": "facebook.com/univpennsylvania",
+            "twitter_url": "twitter.com/penn",
+            "linkedin_id": "3165",
+            "website": "upenn.edu",
+            "domain": "upenn.edu"
+          },
+          "degrees": [
+            "doctorates",
+            "doctor of philosophy"
+          ],
+          "start_date": "2004",
+          "end_date": "2010",
+          "majors": [
+            "information science"
+          ],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "university of pennsylvania",
+            "type": "post-secondary institution",
+            "id": "spmthitvEstXZ58FOOylFA_0",
+            "location": {
+              "name": "philadelphia, pennsylvania, united states",
+              "locality": "philadelphia",
+              "region": "pennsylvania",
+              "country": "united states",
+              "continent": "north america"
+            },
+            "linkedin_url": "linkedin.com/school/university-of-pennsylvania",
+            "facebook_url": "facebook.com/univpennsylvania",
+            "twitter_url": "twitter.com/penn",
+            "linkedin_id": "3165",
+            "website": "upenn.edu",
+            "domain": "upenn.edu"
+          },
+          "degrees": [],
+          "start_date": "2004",
+          "end_date": "2005",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "birla institute of technology and science, pilani",
+            "type": "post-secondary institution",
+            "id": "ghXuMPK0nLZCsBzNcR-s0Q_0",
+            "location": {
+              "name": "pilāni, rajasthan, india",
+              "locality": "pilāni",
+              "region": "rajasthan",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/birla-institute-of-technology-and-science-pilani",
+            "facebook_url": "facebook.com/universitybitspilani",
+            "twitter_url": "twitter.com/bitspilaniindia",
+            "linkedin_id": "739903",
+            "website": "bits-pilani.ac.in",
+            "domain": "bits-pilani.ac.in"
+          },
+          "degrees": [
+            "bachelors",
+            "bachelor of engineering"
+          ],
+          "start_date": "1999",
+          "end_date": "2003",
+          "majors": [
+            "computer science"
+          ],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "university of pennsylvania",
+            "type": "post-secondary institution",
+            "id": "spmthitvEstXZ58FOOylFA_0",
+            "location": {
+              "name": "philadelphia, pennsylvania, united states",
+              "locality": "philadelphia",
+              "region": "pennsylvania",
+              "country": "united states",
+              "continent": "north america"
+            },
+            "linkedin_url": "linkedin.com/school/university-of-pennsylvania",
+            "facebook_url": "facebook.com/univpennsylvania",
+            "twitter_url": "twitter.com/penn",
+            "linkedin_id": "3165",
+            "website": "upenn.edu",
+            "domain": "upenn.edu"
+          },
+          "degrees": [
+            "doctorates",
+            "doctor of philosophy"
+          ],
+          "start_date": "1997",
+          "end_date": "1998",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        }
+      ],
+      "profiles": [
+        {
+          "network": "linkedin",
+          "id": "40340269",
+          "url": "linkedin.com/in/parthapratimtalukdar",
+          "username": "parthapratimtalukdar"
+        },
+        {
+          "network": "github",
+          "id": null,
+          "url": "github.com/parthatalukdar",
+          "username": "parthatalukdar"
+        }
+      ],
+      "dataset_version": "31.0"
+    }
+  },
+  "data": {
+    "id": "KhgzL4LSEwEIlzyxFPaMrw_0000",
+    "full_name": "partha talukdar",
+    "first_name": "partha",
+    "middle_initial": "p",
+    "middle_name": "pratim",
+    "last_initial": "t",
+    "last_name": "talukdar",
+    "sex": "male",
+    "birth_year": false,
+    "birth_date": false,
+    "linkedin_url": "linkedin.com/in/parthapratimtalukdar",
+    "linkedin_username": "parthapratimtalukdar",
+    "linkedin_id": "40340269",
+    "facebook_url": null,
+    "facebook_username": null,
+    "facebook_id": null,
+    "twitter_url": null,
+    "twitter_username": null,
+    "github_url": "github.com/parthatalukdar",
+    "github_username": "parthatalukdar",
+    "work_email": false,
+    "personal_emails": true,
+    "recommended_personal_email": true,
+    "mobile_phone": true,
+    "industry": "research",
+    "job_title": "research scientist and manager",
+    "job_title_role": "research",
+    "job_title_sub_role": null,
+    "job_title_class": "research_and_development",
+    "job_title_levels": [
+      "manager"
+    ],
+    "job_company_id": "StyaWCIGgDNCuBaCNAhGWwCKPEQb",
+    "job_company_name": "google deepmind",
+    "job_company_website": "deepmind.com",
+    "job_company_size": "501-1000",
+    "job_company_founded": 2010,
+    "job_company_industry": "research",
+    "job_company_linkedin_url": "linkedin.com/company/googledeepmind",
+    "job_company_linkedin_id": "1594050",
+    "job_company_facebook_url": null,
+    "job_company_twitter_url": "twitter.com/deepmindai",
+    "job_company_location_name": "london, england, united kingdom",
+    "job_company_location_locality": "london",
+    "job_company_location_metro": null,
+    "job_company_location_region": "england",
+    "job_company_location_geo": "51.46,-0.20",
+    "job_company_location_street_address": null,
+    "job_company_location_address_line_2": null,
+    "job_company_location_postal_code": "n1c 4ag",
+    "job_company_location_country": "united kingdom",
+    "job_company_location_continent": "europe",
+    "job_last_changed": "2024-09-30",
+    "job_last_verified": "2025-06-19",
+    "job_start_date": "2024-05",
+    "location_name": true,
+    "location_locality": true,
+    "location_metro": false,
+    "location_region": true,
+    "location_country": "india",
+    "location_continent": "asia",
+    "location_street_address": false,
+    "location_address_line_2": null,
+    "location_postal_code": false,
+    "location_geo": true,
+    "location_last_updated": "2025-06-19",
+    "phone_numbers": true,
+    "emails": true,
+    "interests": [],
+    "skills": [
+      "algorithms",
+      "artificial intelligence",
+      "c++",
+      "computational linguistics",
+      "computer science",
+      "data mining",
+      "distributed systems",
+      "information extraction",
+      "java",
+      "latex",
+      "machine learning",
+      "natural language processing",
+      "pattern recognition",
+      "programming",
+      "python",
+      "semantics",
+      "text mining"
+    ],
+    "location_names": true,
+    "regions": true,
+    "countries": [
+      "india"
+    ],
+    "street_addresses": false,
+    "experience": [
+      {
+        "company": {
+          "name": "google deepmind",
+          "size": "501-1000",
+          "id": "StyaWCIGgDNCuBaCNAhGWwCKPEQb",
+          "founded": 2010,
+          "industry": "research",
+          "location": {
+            "name": "london, england, united kingdom",
+            "locality": "london",
+            "region": "england",
+            "metro": null,
+            "country": "united kingdom",
+            "continent": "europe",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "n1c 4ag",
+            "geo": "51.46,-0.20"
+          },
+          "linkedin_url": "linkedin.com/company/googledeepmind",
+          "linkedin_id": "1594050",
+          "facebook_url": null,
+          "twitter_url": "twitter.com/deepmindai",
+          "website": "deepmind.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": null,
+        "start_date": "2024-05",
+        "title": {
+          "name": "research scientist and manager",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": [
+            "manager"
+          ]
+        },
+        "is_primary": true
+      },
+      {
+        "company": {
+          "name": "google",
+          "size": "10001+",
+          "id": "aKCIYBNF9ey6o5CjHCCO4goHYKlf",
+          "founded": 1998,
+          "industry": "internet",
+          "location": {
+            "name": "mountain view, california, united states",
+            "locality": "mountain view",
+            "region": "california",
+            "metro": "san jose, california",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1600 amphitheatre parkway",
+            "address_line_2": null,
+            "postal_code": "94043",
+            "geo": "37.39,-122.06"
+          },
+          "linkedin_url": "linkedin.com/company/google",
+          "linkedin_id": "1441",
+          "facebook_url": "facebook.com/google",
+          "twitter_url": "twitter.com/google",
+          "website": "google.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2024-05",
+        "start_date": "2020-04",
+        "title": {
+          "name": "research scientist and manager",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": [
+            "manager"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "indian institute of science",
+          "size": "1001-5000",
+          "id": "nosesoGKzhfAOvvkOWftWg1ePDfo",
+          "founded": 1909,
+          "industry": "research",
+          "location": {
+            "name": "bangalore, karnataka, india",
+            "locality": "bangalore",
+            "region": "karnataka",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "560012",
+            "geo": "12.97,77.59"
+          },
+          "linkedin_url": "linkedin.com/company/indian-institute-of-science",
+          "linkedin_id": "164340",
+          "facebook_url": "facebook.com/iiscbangalore",
+          "twitter_url": "twitter.com/iiscbangalore",
+          "website": "iisc.ac.in"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": null,
+        "start_date": "2019-12",
+        "title": {
+          "name": "associate professor",
+          "class": "services",
+          "role": "education",
+          "sub_role": "professor",
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "kenome",
+          "size": "1-10",
+          "id": "kWsU6Kz0LfHSBm2lg1irmwrqAcn4",
+          "founded": 2017,
+          "industry": "computer software",
+          "location": {
+            "name": "wilson garden, karnataka, india",
+            "locality": "wilson garden",
+            "region": "karnataka",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "560027",
+            "geo": "13.22,77.57"
+          },
+          "linkedin_url": "linkedin.com/company/kenome",
+          "linkedin_id": "14408800",
+          "facebook_url": "facebook.com/kenome",
+          "twitter_url": "twitter.com/kenomeio",
+          "website": "kenome.io"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2020-03",
+        "start_date": "2017-09",
+        "title": {
+          "name": "founder",
+          "class": "general_and_administrative",
+          "role": "operations",
+          "sub_role": "executive",
+          "levels": [
+            "owner"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "indian institute of science",
+          "size": "1001-5000",
+          "id": "nosesoGKzhfAOvvkOWftWg1ePDfo",
+          "founded": 1909,
+          "industry": "research",
+          "location": {
+            "name": "bangalore, karnataka, india",
+            "locality": "bangalore",
+            "region": "karnataka",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "560012",
+            "geo": "12.97,77.59"
+          },
+          "linkedin_url": "linkedin.com/company/indian-institute-of-science",
+          "linkedin_id": "164340",
+          "facebook_url": "facebook.com/iiscbangalore",
+          "twitter_url": "twitter.com/iiscbangalore",
+          "website": "iisc.ac.in"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2019-12",
+        "start_date": "2014-07",
+        "title": {
+          "name": "assistant professor",
+          "class": "services",
+          "role": "education",
+          "sub_role": "professor",
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "carnegie mellon university",
+          "size": "5001-10000",
+          "id": "H4owLqEpmhyKxWbjuVfgSwDJUWbL",
+          "founded": 1900,
+          "industry": "higher education",
+          "location": {
+            "name": "pittsburgh, pennsylvania, united states",
+            "locality": "pittsburgh",
+            "region": "pennsylvania",
+            "metro": "pittsburgh, pennsylvania",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "5000 forbes avenue",
+            "address_line_2": null,
+            "postal_code": "15213",
+            "geo": "40.41,-80.02"
+          },
+          "linkedin_url": "linkedin.com/company/carnegie-mellon-university",
+          "linkedin_id": "3147",
+          "facebook_url": "facebook.com/carnegiemellonu",
+          "twitter_url": "twitter.com/carnegiemellon",
+          "website": "cmu.edu"
+        },
+        "location_names": [
+          "pittsburgh, pennsylvania, united states"
+        ],
+        "end_date": "2014-05",
+        "start_date": "2011-05",
+        "title": {
+          "name": "post doctoral fellow, machine learning department",
+          "class": null,
+          "role": null,
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "microsoft",
+          "size": "10001+",
+          "id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+          "founded": 1975,
+          "industry": "computer software",
+          "location": {
+            "name": "redmond, washington, united states",
+            "locality": "redmond",
+            "region": "washington",
+            "metro": "seattle, washington",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1 microsoft way",
+            "address_line_2": null,
+            "postal_code": "98052",
+            "geo": "47.67,-122.10"
+          },
+          "linkedin_url": "linkedin.com/company/microsoft",
+          "linkedin_id": "1035",
+          "facebook_url": "facebook.com/microsoft",
+          "twitter_url": "twitter.com/microsoft",
+          "website": "microsoft.com"
+        },
+        "location_names": [],
+        "end_date": "2011-03",
+        "start_date": "2010-03",
+        "title": {
+          "name": "visiting research scientist",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "google",
+          "size": "10001+",
+          "id": "aKCIYBNF9ey6o5CjHCCO4goHYKlf",
+          "founded": 1998,
+          "industry": "internet",
+          "location": {
+            "name": "mountain view, california, united states",
+            "locality": "mountain view",
+            "region": "california",
+            "metro": "san jose, california",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1600 amphitheatre parkway",
+            "address_line_2": null,
+            "postal_code": "94043",
+            "geo": "37.39,-122.06"
+          },
+          "linkedin_url": "linkedin.com/company/google",
+          "linkedin_id": "1441",
+          "facebook_url": "facebook.com/google",
+          "twitter_url": "twitter.com/google",
+          "website": "google.com"
+        },
+        "location_names": [],
+        "end_date": "2008-12",
+        "start_date": "2008-05",
+        "title": {
+          "name": "research intern",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": [
+            "training"
+          ]
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "the wharton school",
+          "size": "501-1000",
+          "id": "CpazhtlDcT9Iqes8fyoVVwnjkHff",
+          "founded": 1881,
+          "industry": "higher education",
+          "location": {
+            "name": "philadelphia, pennsylvania, united states",
+            "locality": "philadelphia",
+            "region": "pennsylvania",
+            "metro": "philadelphia, pennsylvania",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "19104",
+            "geo": "40.00,-75.13"
+          },
+          "linkedin_url": "linkedin.com/company/the-wharton-school",
+          "linkedin_id": "5290",
+          "facebook_url": "facebook.com/whartonschool",
+          "twitter_url": "twitter.com/wharton",
+          "website": "wharton.upenn.edu"
+        },
+        "location_names": [],
+        "end_date": "2007-05",
+        "start_date": "2007-01",
+        "title": {
+          "name": "research fellow",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": "academic",
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "hewlett packard enterprise",
+          "size": "10001+",
+          "id": "EyWCGfUy1Xf29qBoP2TW8ATRRvMt",
+          "founded": 1939,
+          "industry": "information technology and services",
+          "location": {
+            "name": "houston, texas, united states",
+            "locality": "houston",
+            "region": "texas",
+            "metro": null,
+            "country": "united states",
+            "continent": null,
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": null,
+            "geo": null
+          },
+          "linkedin_url": "linkedin.com/company/hewlett-packard-enterprise",
+          "linkedin_id": "1025",
+          "facebook_url": "facebook.com/hewlettpackardenterprise",
+          "twitter_url": "twitter.com/hpe",
+          "website": "hpe.com"
+        },
+        "location_names": [],
+        "end_date": "2004-06",
+        "start_date": "2003-07",
+        "title": {
+          "name": "research engineer",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "indian institute of science",
+          "size": "1001-5000",
+          "id": "nosesoGKzhfAOvvkOWftWg1ePDfo",
+          "founded": 1909,
+          "industry": "research",
+          "location": {
+            "name": "bangalore, karnataka, india",
+            "locality": "bangalore",
+            "region": "karnataka",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "560012",
+            "geo": "12.97,77.59"
+          },
+          "linkedin_url": "linkedin.com/company/indian-institute-of-science",
+          "linkedin_id": "164340",
+          "facebook_url": "facebook.com/iiscbangalore",
+          "twitter_url": "twitter.com/iiscbangalore",
+          "website": "iisc.ac.in"
+        },
+        "location_names": [],
+        "end_date": "2002-08",
+        "start_date": "2002-06",
+        "title": {
+          "name": "fellowship student",
+          "class": "services",
+          "role": "education",
+          "sub_role": "student",
+          "levels": []
+        },
+        "is_primary": false
+      }
+    ],
+    "education": [
+      {
+        "school": {
+          "name": "university of pennsylvania",
+          "type": "post-secondary institution",
+          "id": "spmthitvEstXZ58FOOylFA_0",
+          "location": {
+            "name": "philadelphia, pennsylvania, united states",
+            "locality": "philadelphia",
+            "region": "pennsylvania",
+            "country": "united states",
+            "continent": "north america"
+          },
+          "linkedin_url": "linkedin.com/school/university-of-pennsylvania",
+          "facebook_url": "facebook.com/univpennsylvania",
+          "twitter_url": "twitter.com/penn",
+          "linkedin_id": "3165",
+          "website": "upenn.edu",
+          "domain": "upenn.edu"
+        },
+        "degrees": [
+          "doctorates",
+          "doctor of philosophy"
+        ],
+        "start_date": "2004",
+        "end_date": "2010",
+        "majors": [
+          "information science"
+        ],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "university of pennsylvania",
+          "type": "post-secondary institution",
+          "id": "spmthitvEstXZ58FOOylFA_0",
+          "location": {
+            "name": "philadelphia, pennsylvania, united states",
+            "locality": "philadelphia",
+            "region": "pennsylvania",
+            "country": "united states",
+            "continent": "north america"
+          },
+          "linkedin_url": "linkedin.com/school/university-of-pennsylvania",
+          "facebook_url": "facebook.com/univpennsylvania",
+          "twitter_url": "twitter.com/penn",
+          "linkedin_id": "3165",
+          "website": "upenn.edu",
+          "domain": "upenn.edu"
+        },
+        "degrees": [],
+        "start_date": "2004",
+        "end_date": "2005",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "birla institute of technology and science, pilani",
+          "type": "post-secondary institution",
+          "id": "ghXuMPK0nLZCsBzNcR-s0Q_0",
+          "location": {
+            "name": "pilāni, rajasthan, india",
+            "locality": "pilāni",
+            "region": "rajasthan",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/birla-institute-of-technology-and-science-pilani",
+          "facebook_url": "facebook.com/universitybitspilani",
+          "twitter_url": "twitter.com/bitspilaniindia",
+          "linkedin_id": "739903",
+          "website": "bits-pilani.ac.in",
+          "domain": "bits-pilani.ac.in"
+        },
+        "degrees": [
+          "bachelors",
+          "bachelor of engineering"
+        ],
+        "start_date": "1999",
+        "end_date": "2003",
+        "majors": [
+          "computer science"
+        ],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "university of pennsylvania",
+          "type": "post-secondary institution",
+          "id": "spmthitvEstXZ58FOOylFA_0",
+          "location": {
+            "name": "philadelphia, pennsylvania, united states",
+            "locality": "philadelphia",
+            "region": "pennsylvania",
+            "country": "united states",
+            "continent": "north america"
+          },
+          "linkedin_url": "linkedin.com/school/university-of-pennsylvania",
+          "facebook_url": "facebook.com/univpennsylvania",
+          "twitter_url": "twitter.com/penn",
+          "linkedin_id": "3165",
+          "website": "upenn.edu",
+          "domain": "upenn.edu"
+        },
+        "degrees": [
+          "doctorates",
+          "doctor of philosophy"
+        ],
+        "start_date": "1997",
+        "end_date": "1998",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      }
+    ],
+    "profiles": [
+      {
+        "network": "linkedin",
+        "id": "40340269",
+        "url": "linkedin.com/in/parthapratimtalukdar",
+        "username": "parthapratimtalukdar"
+      },
+      {
+        "network": "github",
+        "id": null,
+        "url": "github.com/parthatalukdar",
+        "username": "parthatalukdar"
+      }
+    ],
+    "dataset_version": "31.0"
+  },
+  "fetchedAt": "2025-07-22T11:43:24.051Z"
+}

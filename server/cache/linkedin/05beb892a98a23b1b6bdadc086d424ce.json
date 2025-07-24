@@ -1,0 +1,521 @@
+{
+  "rawData": {
+    "status": 200,
+    "likelihood": 9,
+    "data": {
+      "id": "SS0NGhHa4GZZn2jTbesFQQ_0000",
+      "full_name": "kalika bali",
+      "first_name": "kalika",
+      "middle_initial": null,
+      "middle_name": null,
+      "last_initial": "b",
+      "last_name": "bali",
+      "sex": "female",
+      "birth_year": false,
+      "birth_date": false,
+      "linkedin_url": "linkedin.com/in/kalika-bali-b72bab9",
+      "linkedin_username": "kalika-bali-b72bab9",
+      "linkedin_id": "29839046",
+      "facebook_url": null,
+      "facebook_username": null,
+      "facebook_id": null,
+      "twitter_url": null,
+      "twitter_username": null,
+      "github_url": null,
+      "github_username": null,
+      "work_email": true,
+      "personal_emails": true,
+      "recommended_personal_email": true,
+      "mobile_phone": true,
+      "industry": "computer software",
+      "job_title": "senior principal researcher",
+      "job_title_role": "research",
+      "job_title_sub_role": null,
+      "job_title_class": "research_and_development",
+      "job_title_levels": [
+        "senior"
+      ],
+      "job_company_id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+      "job_company_name": "microsoft",
+      "job_company_website": "microsoft.com",
+      "job_company_size": "10001+",
+      "job_company_founded": 1975,
+      "job_company_industry": "computer software",
+      "job_company_linkedin_url": "linkedin.com/company/microsoft",
+      "job_company_linkedin_id": "1035",
+      "job_company_facebook_url": "facebook.com/microsoft",
+      "job_company_twitter_url": "twitter.com/microsoft",
+      "job_company_location_name": "redmond, washington, united states",
+      "job_company_location_locality": "redmond",
+      "job_company_location_metro": "seattle, washington",
+      "job_company_location_region": "washington",
+      "job_company_location_geo": "47.67,-122.10",
+      "job_company_location_street_address": "1 microsoft way",
+      "job_company_location_address_line_2": null,
+      "job_company_location_postal_code": "98052",
+      "job_company_location_country": "united states",
+      "job_company_location_continent": "north america",
+      "job_last_changed": "2017-12-04",
+      "job_last_verified": "2025-04-01",
+      "job_start_date": "2024-09",
+      "location_name": true,
+      "location_locality": true,
+      "location_metro": false,
+      "location_region": true,
+      "location_country": "india",
+      "location_continent": "asia",
+      "location_street_address": false,
+      "location_address_line_2": null,
+      "location_postal_code": false,
+      "location_geo": true,
+      "location_last_updated": "2025-04-01",
+      "phone_numbers": true,
+      "emails": true,
+      "interests": [],
+      "skills": [
+        "algorithms",
+        "artificial intelligence",
+        "c",
+        "c++",
+        "computational linguistics",
+        "computer science",
+        "data mining",
+        "human computer interaction",
+        "information extraction",
+        "information retrieval",
+        "latex",
+        "linguistics",
+        "machine learning",
+        "natural language processing",
+        "pattern recognition",
+        "research",
+        "statistics",
+        "text mining"
+      ],
+      "location_names": true,
+      "regions": true,
+      "countries": [
+        "india"
+      ],
+      "street_addresses": false,
+      "experience": [
+        {
+          "company": {
+            "name": "microsoft",
+            "size": "10001+",
+            "id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+            "founded": 1975,
+            "industry": "computer software",
+            "location": {
+              "name": "redmond, washington, united states",
+              "locality": "redmond",
+              "region": "washington",
+              "metro": "seattle, washington",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1 microsoft way",
+              "address_line_2": null,
+              "postal_code": "98052",
+              "geo": "47.67,-122.10"
+            },
+            "linkedin_url": "linkedin.com/company/microsoft",
+            "linkedin_id": "1035",
+            "facebook_url": "facebook.com/microsoft",
+            "twitter_url": "twitter.com/microsoft",
+            "website": "microsoft.com"
+          },
+          "location_names": [
+            "redmond, washington, united states",
+            "bangalore, karnataka, india"
+          ],
+          "end_date": null,
+          "start_date": "2024-09",
+          "title": {
+            "name": "senior principal researcher",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": [
+              "senior"
+            ]
+          },
+          "is_primary": true
+        },
+        {
+          "company": {
+            "name": "microsoft",
+            "size": "10001+",
+            "id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+            "founded": 1975,
+            "industry": "computer software",
+            "location": {
+              "name": "redmond, washington, united states",
+              "locality": "redmond",
+              "region": "washington",
+              "metro": "seattle, washington",
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "1 microsoft way",
+              "address_line_2": null,
+              "postal_code": "98052",
+              "geo": "47.67,-122.10"
+            },
+            "linkedin_url": "linkedin.com/company/microsoft",
+            "linkedin_id": "1035",
+            "facebook_url": "facebook.com/microsoft",
+            "twitter_url": "twitter.com/microsoft",
+            "website": "microsoft.com"
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": null,
+          "start_date": "2019",
+          "title": {
+            "name": "principal researcher",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "microsoft research lab by zaher nourredine",
+            "size": "501-1000",
+            "id": "sOgaeMbkHlbaEE4RKZPuLgYeT5qF",
+            "founded": null,
+            "industry": "hospital & health care",
+            "location": {
+              "name": "new delhi, delhi, india",
+              "locality": "new delhi",
+              "region": "delhi",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": "807 barakhamba road",
+              "address_line_2": null,
+              "postal_code": "110001",
+              "geo": "28.61,77.20"
+            },
+            "linkedin_url": "linkedin.com/company/microsoft-zaher-nourredine",
+            "linkedin_id": "29053964",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": null
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": null,
+          "start_date": "2019",
+          "title": {
+            "name": "principal researcher",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        },
+        {
+          "company": {
+            "name": "hewlett packard labs india",
+            "size": null,
+            "id": null,
+            "founded": null,
+            "industry": null,
+            "location": null,
+            "linkedin_url": null,
+            "linkedin_id": null,
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": null
+          },
+          "location_names": [
+            "bangalore, karnataka, india"
+          ],
+          "end_date": "2006-07",
+          "start_date": "2003-03",
+          "title": {
+            "name": "research linguist",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        }
+      ],
+      "education": [],
+      "profiles": [
+        {
+          "network": "linkedin",
+          "id": "29839046",
+          "url": "linkedin.com/in/kalika-bali-b72bab9",
+          "username": "kalika-bali-b72bab9"
+        }
+      ],
+      "dataset_version": "31.0"
+    }
+  },
+  "data": {
+    "id": "SS0NGhHa4GZZn2jTbesFQQ_0000",
+    "full_name": "kalika bali",
+    "first_name": "kalika",
+    "middle_initial": null,
+    "middle_name": null,
+    "last_initial": "b",
+    "last_name": "bali",
+    "sex": "female",
+    "birth_year": false,
+    "birth_date": false,
+    "linkedin_url": "linkedin.com/in/kalika-bali-b72bab9",
+    "linkedin_username": "kalika-bali-b72bab9",
+    "linkedin_id": "29839046",
+    "facebook_url": null,
+    "facebook_username": null,
+    "facebook_id": null,
+    "twitter_url": null,
+    "twitter_username": null,
+    "github_url": null,
+    "github_username": null,
+    "work_email": true,
+    "personal_emails": true,
+    "recommended_personal_email": true,
+    "mobile_phone": true,
+    "industry": "computer software",
+    "job_title": "senior principal researcher",
+    "job_title_role": "research",
+    "job_title_sub_role": null,
+    "job_title_class": "research_and_development",
+    "job_title_levels": [
+      "senior"
+    ],
+    "job_company_id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+    "job_company_name": "microsoft",
+    "job_company_website": "microsoft.com",
+    "job_company_size": "10001+",
+    "job_company_founded": 1975,
+    "job_company_industry": "computer software",
+    "job_company_linkedin_url": "linkedin.com/company/microsoft",
+    "job_company_linkedin_id": "1035",
+    "job_company_facebook_url": "facebook.com/microsoft",
+    "job_company_twitter_url": "twitter.com/microsoft",
+    "job_company_location_name": "redmond, washington, united states",
+    "job_company_location_locality": "redmond",
+    "job_company_location_metro": "seattle, washington",
+    "job_company_location_region": "washington",
+    "job_company_location_geo": "47.67,-122.10",
+    "job_company_location_street_address": "1 microsoft way",
+    "job_company_location_address_line_2": null,
+    "job_company_location_postal_code": "98052",
+    "job_company_location_country": "united states",
+    "job_company_location_continent": "north america",
+    "job_last_changed": "2017-12-04",
+    "job_last_verified": "2025-04-01",
+    "job_start_date": "2024-09",
+    "location_name": true,
+    "location_locality": true,
+    "location_metro": false,
+    "location_region": true,
+    "location_country": "india",
+    "location_continent": "asia",
+    "location_street_address": false,
+    "location_address_line_2": null,
+    "location_postal_code": false,
+    "location_geo": true,
+    "location_last_updated": "2025-04-01",
+    "phone_numbers": true,
+    "emails": true,
+    "interests": [],
+    "skills": [
+      "algorithms",
+      "artificial intelligence",
+      "c",
+      "c++",
+      "computational linguistics",
+      "computer science",
+      "data mining",
+      "human computer interaction",
+      "information extraction",
+      "information retrieval",
+      "latex",
+      "linguistics",
+      "machine learning",
+      "natural language processing",
+      "pattern recognition",
+      "research",
+      "statistics",
+      "text mining"
+    ],
+    "location_names": true,
+    "regions": true,
+    "countries": [
+      "india"
+    ],
+    "street_addresses": false,
+    "experience": [
+      {
+        "company": {
+          "name": "microsoft",
+          "size": "10001+",
+          "id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+          "founded": 1975,
+          "industry": "computer software",
+          "location": {
+            "name": "redmond, washington, united states",
+            "locality": "redmond",
+            "region": "washington",
+            "metro": "seattle, washington",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1 microsoft way",
+            "address_line_2": null,
+            "postal_code": "98052",
+            "geo": "47.67,-122.10"
+          },
+          "linkedin_url": "linkedin.com/company/microsoft",
+          "linkedin_id": "1035",
+          "facebook_url": "facebook.com/microsoft",
+          "twitter_url": "twitter.com/microsoft",
+          "website": "microsoft.com"
+        },
+        "location_names": [
+          "redmond, washington, united states",
+          "bangalore, karnataka, india"
+        ],
+        "end_date": null,
+        "start_date": "2024-09",
+        "title": {
+          "name": "senior principal researcher",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": [
+            "senior"
+          ]
+        },
+        "is_primary": true
+      },
+      {
+        "company": {
+          "name": "microsoft",
+          "size": "10001+",
+          "id": "RZOFiRjw26VpLObnwmYXGgRyn3aW",
+          "founded": 1975,
+          "industry": "computer software",
+          "location": {
+            "name": "redmond, washington, united states",
+            "locality": "redmond",
+            "region": "washington",
+            "metro": "seattle, washington",
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "1 microsoft way",
+            "address_line_2": null,
+            "postal_code": "98052",
+            "geo": "47.67,-122.10"
+          },
+          "linkedin_url": "linkedin.com/company/microsoft",
+          "linkedin_id": "1035",
+          "facebook_url": "facebook.com/microsoft",
+          "twitter_url": "twitter.com/microsoft",
+          "website": "microsoft.com"
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": null,
+        "start_date": "2019",
+        "title": {
+          "name": "principal researcher",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "microsoft research lab by zaher nourredine",
+          "size": "501-1000",
+          "id": "sOgaeMbkHlbaEE4RKZPuLgYeT5qF",
+          "founded": null,
+          "industry": "hospital & health care",
+          "location": {
+            "name": "new delhi, delhi, india",
+            "locality": "new delhi",
+            "region": "delhi",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": "807 barakhamba road",
+            "address_line_2": null,
+            "postal_code": "110001",
+            "geo": "28.61,77.20"
+          },
+          "linkedin_url": "linkedin.com/company/microsoft-zaher-nourredine",
+          "linkedin_id": "29053964",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": null
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": null,
+        "start_date": "2019",
+        "title": {
+          "name": "principal researcher",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      },
+      {
+        "company": {
+          "name": "hewlett packard labs india",
+          "size": null,
+          "id": null,
+          "founded": null,
+          "industry": null,
+          "location": null,
+          "linkedin_url": null,
+          "linkedin_id": null,
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": null
+        },
+        "location_names": [
+          "bangalore, karnataka, india"
+        ],
+        "end_date": "2006-07",
+        "start_date": "2003-03",
+        "title": {
+          "name": "research linguist",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      }
+    ],
+    "education": [],
+    "profiles": [
+      {
+        "network": "linkedin",
+        "id": "29839046",
+        "url": "linkedin.com/in/kalika-bali-b72bab9",
+        "username": "kalika-bali-b72bab9"
+      }
+    ],
+    "dataset_version": "31.0"
+  },
+  "fetchedAt": "2025-07-22T11:43:24.021Z"
+}

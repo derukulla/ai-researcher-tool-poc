@@ -10,6 +10,8 @@ const { parsePatents } = require('./patentParser');
 const { parseWorkExperience } = require('./workExperienceParser');
 const { parseGitHub } = require('./githubParser');
 const { formatLinkedInProfile } = require('./linkedinFormatter');
+const { calculateTotalScore } = require('./scoringEngine');
+const { getCachedProfile, setCachedProfile, getCacheStats } = require('./linkedinCache');
 
 const { SERPAPI_API_KEY: SERPAPI_KEY, PDL_API_KEY } = require('../config/apiKeys');
 
@@ -713,12 +715,29 @@ function extractLinkedInUsername(url) {
 // =============================================================================
 
 /**
- * Fetch LinkedIn profile data using People Data Labs API
+ * Fetch LinkedIn profile data using People Data Labs API with caching
  * @param {string} linkedinId - LinkedIn ID (without linkedin.com/in/)
- * @returns {Promise<object>} Profile data from PDL API
+ * @param {boolean} useCache - Whether to use cache (default: true)
+ * @returns {Promise<object>} Profile data from PDL API or cache
  */
-async function fetchLinkedInProfile(linkedinId) {
+async function fetchLinkedInProfile(linkedinId, useCache = true) {
   console.log(`🔍 Fetching LinkedIn profile: ${linkedinId}`);
+  
+  // Check cache first if enabled
+  if (useCache) {
+    const cachedProfile = getCachedProfile(linkedinId);
+    if (cachedProfile) {
+      console.log(`💾 Using cached LinkedIn profile: ${linkedinId}`);
+      return {
+        linkedinId,
+        success: true,
+        rawData: cachedProfile.rawData,
+        data: cachedProfile.data,
+        error: null,
+        fromCache: true
+      };
+    }
+  }
   
   try {
     const response = await axios.get(PDL_BASE_URL, {
@@ -733,13 +752,26 @@ async function fetchLinkedInProfile(linkedinId) {
 
     if (response.data && response.data.status === 200) {
       console.log(`✅ Successfully fetched profile for: ${linkedinId}`);
-      return {
+      
+      const profileResult = {
         linkedinId,
         success: true,
         rawData: response.data,
         data: response.data.data,
-        error: null
+        error: null,
+        fromCache: false
       };
+      
+      // Cache the successful result
+      if (useCache) {
+        setCachedProfile(linkedinId, {
+          rawData: response.data,
+          data: response.data.data,
+          fetchedAt: new Date().toISOString()
+        });
+      }
+      
+      return profileResult;
     } else {
       console.log(`⚠️ Profile not found for: ${linkedinId}`);
       return {
@@ -747,17 +779,38 @@ async function fetchLinkedInProfile(linkedinId) {
         success: false,
         rawData: null,
         data: null,
-        error: 'Profile not found'
+        error: 'Profile not found',
+        fromCache: false
       };
     }
   } catch (error) {
     console.error(`❌ Error fetching profile for ${linkedinId}:`, error.message);
+    
+    // If API fails but we have a cached version, use it as fallback
+    if (useCache && (error.response?.status === 402 || error.response?.status === 429)) {
+      console.log(`🔄 API limit reached, checking for any cached version...`);
+      const cachedProfile = getCachedProfile(linkedinId);
+      if (cachedProfile) {
+        console.log(`💾 Using cached LinkedIn profile as fallback: ${linkedinId}`);
+        return {
+          linkedinId,
+          success: true,
+          rawData: cachedProfile.rawData,
+          data: cachedProfile.data,
+          error: null,
+          fromCache: true,
+          fallback: true
+        };
+      }
+    }
+    
     return {
       linkedinId,
       success: false,
       rawData: null,
       data: null,
-      error: error.message
+      error: error.message,
+      fromCache: false
     };
   }
 }
@@ -770,6 +823,29 @@ async function fetchLinkedInProfile(linkedinId) {
  */
 async function searchLinkedInProfiles(filters, maxResults = 50) {
   try {
+    const hardcodedUsernames = [
+      'ahujachirag',
+      'reetesh-mukul-5392532',
+      'parthapratimtalukdar',
+      'kalika-bali-b72bab9',
+      'prateek-jain-1579191a',
+      'kapil-rajesh-kavitha-518344204'
+    ];
+    
+    console.log(`🔍 Using hardcoded LinkedIn profiles (temporary bypass of SerpAPI)`);
+    console.log(`📊 Returning ${hardcodedUsernames.length} hardcoded profiles`);
+    
+    // Convert to expected format
+    const linkedInProfiles1 = hardcodedUsernames.map(username => ({
+      url: `https://www.linkedin.com/in/${username}`,
+      username: username,
+      title: `LinkedIn Profile - ${username}`,
+      snippet: `Hardcoded profile for testing: ${username}`
+    }));
+    
+    console.log(`✅ Prepared ${linkedInProfiles1.length} LinkedIn profiles`);
+    return linkedInProfiles1;
+    
     console.log('🔍 Searching LinkedIn profiles with SerpAPI...');
     
     // Build search query based on filters
@@ -782,9 +858,6 @@ async function searchLinkedInProfiles(filters, maxResults = 50) {
       }
       if (filters.education.fieldOfStudy) {
         searchQuery += `"${filters.education.fieldOfStudy}" `;
-      }
-      if (filters.education.institute) {
-        searchQuery += `"${filters.education.institute}" `;
       }
     }
     
@@ -947,22 +1020,48 @@ function checkEducationFilter(education, filters) {
  * @returns {boolean} Whether publications pass filter
  */
 function checkPublicationsFilter(publications, filters) {
+  // Handle both nested (filters.publications) and flat (filters.minPublications) structures
+  console.log('🔍 DEBUG checkPublicationsFilter called with:');
+  console.log('  filters:', JSON.stringify(filters, null, 2));
+  console.log('  filters type:', typeof filters);
+  
+  if (!filters) {
+    console.log('⚠️ checkPublicationsFilter: filters is undefined, allowing all');
+    return true;
+  }
+  
+  const filter = filters;
+  console.log('  filter:', JSON.stringify(filter, null, 2));
+  console.log('  filter type:', typeof filter);
 
-  const filter = filters.publications;
+  // Safety check for filter object
+  if (!filter || typeof filter !== 'object') {
+    console.log('⚠️ checkPublicationsFilter: filter is not a valid object, allowing all');
+    return true;
+  }
 
   // Check minimum publications
-  if (filter.minPublications && publications.numberOfPublications < filter.minPublications) {
+  if (filter.minPublications && filter.minPublications !== '') {
+    const minPubs = parseInt(filter.minPublications);
+    if (!isNaN(minPubs) && publications.numberOfPublications < minPubs) {
     return false;
+    }
   }
 
   // Check minimum citations
-  if (filter.minCitations && publications.citations < filter.minCitations) {
+  if (filter.minCitations && filter.minCitations !== '') {
+    const minCites = parseInt(filter.minCitations);
+    if (!isNaN(minCites) && publications.citations < minCites) {
     return false;
+    }
   }
 
   // Check h-index
-  if (filter.minHIndex && publications.hIndex < filter.minHIndex) {
+  if (filter.minHIndex && filter.minHIndex !== '') {
+    const minH = parseInt(filter.minHIndex);
+    if (!isNaN(minH) && publications.hIndex < minH) {
     return false;
+    }
   }
 
   // Check venue quality
@@ -982,7 +1081,7 @@ function checkPublicationsFilter(publications, filters) {
     return false;
   }
 
-  if (filter.experienceBracket && publications.experienceBracket !== filter.experienceBracket) {
+  if (filter.experienceBracket && filter.experienceBracket !== '' && publications.experienceBracket !== filter.experienceBracket) {
     return false;
   }
 
@@ -1128,6 +1227,7 @@ async function parseAndFilterProfile(profileInfo, filters) {
       console.log(`✅ Publications parsed: ${publications.numberOfPublications} papers, ${publications.citations} citations`);
       
       // Filter check: Publications
+      console.log(`🔍 DEBUG: About to call checkPublicationsFilter with filters:`, filters);
       if (!checkPublicationsFilter(publications, filters)) {
         console.log(`❌ ${username} filtered out: Publications don't match criteria`);
         return null;
@@ -1229,6 +1329,17 @@ async function parseAndFilterProfile(profileInfo, filters) {
       results.parsing.workExperience = { topAIOrganizations: false, impactQuality: 1, mentorshipRole: false };
     }
 
+    console.log('🎯 Step 7: Calculating Total Score...');
+    try {
+      const totalScore = await calculateTotalScore(results.parsing);
+      results.scoring = totalScore;
+      console.log(`✅ Total Score: ${totalScore.totalScore}/${totalScore.maxPossibleScore}`);
+    } catch (error) {
+      console.error('❌ Scoring failed:', error.message);
+      results.errors.push(`Scoring: ${error.message}`);
+      results.scoring = { totalScore: 0, maxPossibleScore: 100, percentage: 0 };
+    }
+
     console.log(`✅ ${username} passed all filters: ${results.passedFilters.join(', ')}`);
     return results;
     
@@ -1237,7 +1348,6 @@ async function parseAndFilterProfile(profileInfo, filters) {
     return null;
   }
 }
-
 /**
  * Main profile search function (original sequential version)
  * @param {object} filters - All filter criteria from UI
@@ -1284,6 +1394,7 @@ async function profileSearch(filters, options = {}) {
       try {
         console.log(`\n--- Processing Profile ${i + 1}/${maxToProcess}: ${profileInfo.username} ---`);
         
+        console.log(`🔍 DEBUG: Calling parseAndFilterProfile with filters:`, filters);
         const parsedProfile = await parseAndFilterProfile(profileInfo, filters);
         
         if (parsedProfile) {

@@ -1,0 +1,491 @@
+{
+  "rawData": {
+    "status": 200,
+    "likelihood": 9,
+    "data": {
+      "id": "QIW-tIntkgeJQC2M5s0uZA_0000",
+      "full_name": "kapil kavitha",
+      "first_name": "kapil",
+      "middle_initial": "r",
+      "middle_name": "rajesh",
+      "last_initial": "k",
+      "last_name": "kavitha",
+      "sex": "male",
+      "birth_year": false,
+      "birth_date": false,
+      "linkedin_url": "linkedin.com/in/kapil-rajesh-kavitha-518344204",
+      "linkedin_username": "kapil-rajesh-kavitha-518344204",
+      "linkedin_id": "872744420",
+      "facebook_url": null,
+      "facebook_username": null,
+      "facebook_id": null,
+      "twitter_url": null,
+      "twitter_username": null,
+      "github_url": null,
+      "github_username": null,
+      "work_email": false,
+      "personal_emails": false,
+      "recommended_personal_email": false,
+      "mobile_phone": false,
+      "industry": null,
+      "job_title": "undergraduate researcher",
+      "job_title_role": "research",
+      "job_title_sub_role": null,
+      "job_title_class": "research_and_development",
+      "job_title_levels": [],
+      "job_company_id": "BT3624F0Cfnzua5MWYNscAdztx2H",
+      "job_company_name": "ltrc",
+      "job_company_website": "ltrc.org",
+      "job_company_size": "51-200",
+      "job_company_founded": null,
+      "job_company_industry": null,
+      "job_company_linkedin_url": "linkedin.com/company/ltrc",
+      "job_company_linkedin_id": "9836226",
+      "job_company_facebook_url": null,
+      "job_company_twitter_url": null,
+      "job_company_location_name": "butler, alabama, united states",
+      "job_company_location_locality": "butler",
+      "job_company_location_metro": null,
+      "job_company_location_region": "alabama",
+      "job_company_location_geo": "32.08,-88.21",
+      "job_company_location_street_address": "816 west pushmataha street",
+      "job_company_location_address_line_2": null,
+      "job_company_location_postal_code": "36904",
+      "job_company_location_country": "united states",
+      "job_company_location_continent": "north america",
+      "job_last_changed": "2023-05-01",
+      "job_last_verified": "2025-06-19",
+      "job_start_date": "2023-05",
+      "location_name": true,
+      "location_locality": true,
+      "location_metro": false,
+      "location_region": true,
+      "location_country": "india",
+      "location_continent": "asia",
+      "location_street_address": false,
+      "location_address_line_2": null,
+      "location_postal_code": false,
+      "location_geo": true,
+      "location_last_updated": "2025-06-19",
+      "phone_numbers": false,
+      "emails": false,
+      "interests": [],
+      "skills": [
+        "bash",
+        "c (programming language)",
+        "c++",
+        "data analytics",
+        "data science",
+        "debate",
+        "extempore",
+        "git",
+        "github",
+        "javascript",
+        "mern stack",
+        "natural language processing",
+        "problem solving",
+        "python",
+        "quiz",
+        "react.js"
+      ],
+      "location_names": true,
+      "regions": true,
+      "countries": [
+        "india"
+      ],
+      "street_addresses": false,
+      "experience": [
+        {
+          "company": {
+            "name": "ltrc",
+            "size": "51-200",
+            "id": "BT3624F0Cfnzua5MWYNscAdztx2H",
+            "founded": null,
+            "industry": null,
+            "location": {
+              "name": "butler, alabama, united states",
+              "locality": "butler",
+              "region": "alabama",
+              "metro": null,
+              "country": "united states",
+              "continent": "north america",
+              "street_address": "816 west pushmataha street",
+              "address_line_2": null,
+              "postal_code": "36904",
+              "geo": "32.08,-88.21"
+            },
+            "linkedin_url": "linkedin.com/company/ltrc",
+            "linkedin_id": "9836226",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": "ltrc.org"
+          },
+          "location_names": [
+            "hyderābād, telangana, india"
+          ],
+          "end_date": null,
+          "start_date": "2023-05",
+          "title": {
+            "name": "undergraduate researcher",
+            "class": "research_and_development",
+            "role": "research",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": true
+        },
+        {
+          "company": {
+            "name": "international institute of information technology",
+            "size": "51-200",
+            "id": "z0BzoXHcvmX1U7jBj1jwMwjb1MOX",
+            "founded": null,
+            "industry": "higher education",
+            "location": {
+              "name": "andhra pradesh, india",
+              "locality": null,
+              "region": "andhra pradesh",
+              "metro": null,
+              "country": "india",
+              "continent": "asia",
+              "street_address": null,
+              "address_line_2": null,
+              "postal_code": "500032",
+              "geo": null
+            },
+            "linkedin_url": "linkedin.com/company/international-institute-of-information-technology",
+            "linkedin_id": "49275",
+            "facebook_url": null,
+            "twitter_url": null,
+            "website": "iiit.net"
+          },
+          "location_names": [
+            "hyderābād, telangana, india"
+          ],
+          "end_date": "2024-04",
+          "start_date": "2024-01",
+          "title": {
+            "name": "teaching assistant",
+            "class": "services",
+            "role": "education",
+            "sub_role": null,
+            "levels": []
+          },
+          "is_primary": false
+        }
+      ],
+      "education": [
+        {
+          "school": {
+            "name": "international institute of information technology hyderabad (iiith)",
+            "type": "post-secondary institution",
+            "id": "htsA6gmWXBQmi8uWv6b4NA_0",
+            "location": {
+              "name": "hyderābād, telangana, india",
+              "locality": "hyderābād",
+              "region": "telangana",
+              "country": "india",
+              "continent": "asia"
+            },
+            "linkedin_url": "linkedin.com/school/iiithofficial",
+            "facebook_url": "facebook.com/iiith",
+            "twitter_url": "twitter.com/iiit_hyderabad",
+            "linkedin_id": "49275",
+            "website": "iiit.ac.in",
+            "domain": "iiit.ac.in"
+          },
+          "degrees": [
+            "bachelors"
+          ],
+          "start_date": "2021-11",
+          "end_date": "2025-07",
+          "majors": [
+            "engineering",
+            "computer science",
+            "computer science and engineering"
+          ],
+          "minors": [],
+          "gpa": null
+        },
+        {
+          "school": {
+            "name": "the asian school",
+            "type": "post-secondary institution",
+            "id": "qHl5L1sS87gzkvRQymtzPg_0",
+            "location": null,
+            "linkedin_url": "linkedin.com/school/the-asian-school",
+            "facebook_url": null,
+            "twitter_url": null,
+            "linkedin_id": "8740874",
+            "website": "theasianschool.net",
+            "domain": "theasianschool.net"
+          },
+          "degrees": [],
+          "start_date": "2012-04",
+          "end_date": "2021-03",
+          "majors": [],
+          "minors": [],
+          "gpa": null
+        }
+      ],
+      "profiles": [
+        {
+          "network": "linkedin",
+          "id": "872744420",
+          "url": "linkedin.com/in/kapil-rajesh-kavitha-518344204",
+          "username": "kapil-rajesh-kavitha-518344204"
+        },
+        {
+          "network": "linkedin",
+          "id": "872744420",
+          "url": "linkedin.com/in/kapil-rk-518344204",
+          "username": "kapil-rk-518344204"
+        }
+      ],
+      "dataset_version": "31.0"
+    }
+  },
+  "data": {
+    "id": "QIW-tIntkgeJQC2M5s0uZA_0000",
+    "full_name": "kapil kavitha",
+    "first_name": "kapil",
+    "middle_initial": "r",
+    "middle_name": "rajesh",
+    "last_initial": "k",
+    "last_name": "kavitha",
+    "sex": "male",
+    "birth_year": false,
+    "birth_date": false,
+    "linkedin_url": "linkedin.com/in/kapil-rajesh-kavitha-518344204",
+    "linkedin_username": "kapil-rajesh-kavitha-518344204",
+    "linkedin_id": "872744420",
+    "facebook_url": null,
+    "facebook_username": null,
+    "facebook_id": null,
+    "twitter_url": null,
+    "twitter_username": null,
+    "github_url": null,
+    "github_username": null,
+    "work_email": false,
+    "personal_emails": false,
+    "recommended_personal_email": false,
+    "mobile_phone": false,
+    "industry": null,
+    "job_title": "undergraduate researcher",
+    "job_title_role": "research",
+    "job_title_sub_role": null,
+    "job_title_class": "research_and_development",
+    "job_title_levels": [],
+    "job_company_id": "BT3624F0Cfnzua5MWYNscAdztx2H",
+    "job_company_name": "ltrc",
+    "job_company_website": "ltrc.org",
+    "job_company_size": "51-200",
+    "job_company_founded": null,
+    "job_company_industry": null,
+    "job_company_linkedin_url": "linkedin.com/company/ltrc",
+    "job_company_linkedin_id": "9836226",
+    "job_company_facebook_url": null,
+    "job_company_twitter_url": null,
+    "job_company_location_name": "butler, alabama, united states",
+    "job_company_location_locality": "butler",
+    "job_company_location_metro": null,
+    "job_company_location_region": "alabama",
+    "job_company_location_geo": "32.08,-88.21",
+    "job_company_location_street_address": "816 west pushmataha street",
+    "job_company_location_address_line_2": null,
+    "job_company_location_postal_code": "36904",
+    "job_company_location_country": "united states",
+    "job_company_location_continent": "north america",
+    "job_last_changed": "2023-05-01",
+    "job_last_verified": "2025-06-19",
+    "job_start_date": "2023-05",
+    "location_name": true,
+    "location_locality": true,
+    "location_metro": false,
+    "location_region": true,
+    "location_country": "india",
+    "location_continent": "asia",
+    "location_street_address": false,
+    "location_address_line_2": null,
+    "location_postal_code": false,
+    "location_geo": true,
+    "location_last_updated": "2025-06-19",
+    "phone_numbers": false,
+    "emails": false,
+    "interests": [],
+    "skills": [
+      "bash",
+      "c (programming language)",
+      "c++",
+      "data analytics",
+      "data science",
+      "debate",
+      "extempore",
+      "git",
+      "github",
+      "javascript",
+      "mern stack",
+      "natural language processing",
+      "problem solving",
+      "python",
+      "quiz",
+      "react.js"
+    ],
+    "location_names": true,
+    "regions": true,
+    "countries": [
+      "india"
+    ],
+    "street_addresses": false,
+    "experience": [
+      {
+        "company": {
+          "name": "ltrc",
+          "size": "51-200",
+          "id": "BT3624F0Cfnzua5MWYNscAdztx2H",
+          "founded": null,
+          "industry": null,
+          "location": {
+            "name": "butler, alabama, united states",
+            "locality": "butler",
+            "region": "alabama",
+            "metro": null,
+            "country": "united states",
+            "continent": "north america",
+            "street_address": "816 west pushmataha street",
+            "address_line_2": null,
+            "postal_code": "36904",
+            "geo": "32.08,-88.21"
+          },
+          "linkedin_url": "linkedin.com/company/ltrc",
+          "linkedin_id": "9836226",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": "ltrc.org"
+        },
+        "location_names": [
+          "hyderābād, telangana, india"
+        ],
+        "end_date": null,
+        "start_date": "2023-05",
+        "title": {
+          "name": "undergraduate researcher",
+          "class": "research_and_development",
+          "role": "research",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": true
+      },
+      {
+        "company": {
+          "name": "international institute of information technology",
+          "size": "51-200",
+          "id": "z0BzoXHcvmX1U7jBj1jwMwjb1MOX",
+          "founded": null,
+          "industry": "higher education",
+          "location": {
+            "name": "andhra pradesh, india",
+            "locality": null,
+            "region": "andhra pradesh",
+            "metro": null,
+            "country": "india",
+            "continent": "asia",
+            "street_address": null,
+            "address_line_2": null,
+            "postal_code": "500032",
+            "geo": null
+          },
+          "linkedin_url": "linkedin.com/company/international-institute-of-information-technology",
+          "linkedin_id": "49275",
+          "facebook_url": null,
+          "twitter_url": null,
+          "website": "iiit.net"
+        },
+        "location_names": [
+          "hyderābād, telangana, india"
+        ],
+        "end_date": "2024-04",
+        "start_date": "2024-01",
+        "title": {
+          "name": "teaching assistant",
+          "class": "services",
+          "role": "education",
+          "sub_role": null,
+          "levels": []
+        },
+        "is_primary": false
+      }
+    ],
+    "education": [
+      {
+        "school": {
+          "name": "international institute of information technology hyderabad (iiith)",
+          "type": "post-secondary institution",
+          "id": "htsA6gmWXBQmi8uWv6b4NA_0",
+          "location": {
+            "name": "hyderābād, telangana, india",
+            "locality": "hyderābād",
+            "region": "telangana",
+            "country": "india",
+            "continent": "asia"
+          },
+          "linkedin_url": "linkedin.com/school/iiithofficial",
+          "facebook_url": "facebook.com/iiith",
+          "twitter_url": "twitter.com/iiit_hyderabad",
+          "linkedin_id": "49275",
+          "website": "iiit.ac.in",
+          "domain": "iiit.ac.in"
+        },
+        "degrees": [
+          "bachelors"
+        ],
+        "start_date": "2021-11",
+        "end_date": "2025-07",
+        "majors": [
+          "engineering",
+          "computer science",
+          "computer science and engineering"
+        ],
+        "minors": [],
+        "gpa": null
+      },
+      {
+        "school": {
+          "name": "the asian school",
+          "type": "post-secondary institution",
+          "id": "qHl5L1sS87gzkvRQymtzPg_0",
+          "location": null,
+          "linkedin_url": "linkedin.com/school/the-asian-school",
+          "facebook_url": null,
+          "twitter_url": null,
+          "linkedin_id": "8740874",
+          "website": "theasianschool.net",
+          "domain": "theasianschool.net"
+        },
+        "degrees": [],
+        "start_date": "2012-04",
+        "end_date": "2021-03",
+        "majors": [],
+        "minors": [],
+        "gpa": null
+      }
+    ],
+    "profiles": [
+      {
+        "network": "linkedin",
+        "id": "872744420",
+        "url": "linkedin.com/in/kapil-rajesh-kavitha-518344204",
+        "username": "kapil-rajesh-kavitha-518344204"
+      },
+      {
+        "network": "linkedin",
+        "id": "872744420",
+        "url": "linkedin.com/in/kapil-rk-518344204",
+        "username": "kapil-rk-518344204"
+      }
+    ],
+    "dataset_version": "31.0"
+  },
+  "fetchedAt": "2025-07-22T11:43:24.065Z"
+}

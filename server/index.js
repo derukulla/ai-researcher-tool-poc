@@ -8,6 +8,7 @@ const researcherRoutes = require('./routes/researchers');
 const scoringRoutes = require('./routes/scoring');
 const evaluationRoutes = require('./routes/evaluation');
 const profileSearchRoutes = require('./routes/profileSearch');
+const cacheRoutes = require('./routes/cache');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use('/api/researchers', researcherRoutes);
 app.use('/api/scoring', scoringRoutes);
 app.use('/api/evaluation', evaluationRoutes);
 app.use('/api/profile-search', profileSearchRoutes);
+app.use('/api/cache', cacheRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -47,4 +49,6 @@ app.listen(PORT, () => {
   console.log(`   - *    /api/researchers`);
   console.log(`   - *    /api/scoring`);
   console.log(`   - *    /api/evaluation`);
+  console.log(`   - *    /api/profile-search`);
+  console.log(`   - *    /api/cache`);
 }); 

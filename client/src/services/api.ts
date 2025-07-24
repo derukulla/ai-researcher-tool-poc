@@ -153,6 +153,39 @@ export const evaluationService = {
   }
 };
 
+export const profileSearchService = {
+  // Search LinkedIn profiles based on filters
+  async search(filters: any, options?: any): Promise<any> {
+    const requestBody = {
+      filters,
+      options: {
+        maxProfiles: options?.maxProfiles || 10,
+        maxSearchResults: options?.maxSearchResults || 30,
+        skipCachedProfiles: options?.skipCachedProfiles || false,
+        ...options
+      }
+    };
+    
+    const response = await api.post('/profile-search/search', requestBody, {
+      timeout: 300000 // 5 minutes for profile search processing
+    });
+    
+    return response.data;
+  },
+
+  // Test profile search functionality
+  async test(): Promise<any> {
+    const response = await api.get('/profile-search/test');
+    return response.data;
+  },
+
+  // Preview search query
+  async previewQuery(filters: any): Promise<any> {
+    const response = await api.post('/profile-search/query-preview', { filters });
+    return response.data;
+  }
+};
+
 export const healthService = {
   // Check API health
   async check(): Promise<{ status: string; message: string }> {
@@ -169,5 +202,6 @@ export default {
   researchers: researcherService,
   scoring: scoringService,
   evaluation: evaluationService,
+  profileSearch: profileSearchService,
   health: healthService
 }; 

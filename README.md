@@ -8,11 +8,11 @@ A comprehensive system for evaluating AI researchers based on their education, p
 - **Comprehensive Scoring**: Education, Publications, Patents, Work Experience, GitHub
 - **Real-time Processing**: Live API integration with Google Scholar, Patents, GitHub
 - **Smart Filtering**: Advanced filters for education, publications, patents, and more
-- **QS Ranking Integration**: Filter researchers by university tiers (QS <300 vs QS >300)
 - **Rate Limit Handling**: Robust error handling with user-friendly messages
 - **Score Justification**: Detailed breakdown of how scores are calculated
 - **Source Traceability**: Every data point shows which source it came from and reliability
 - **Parallel Processing**: Lightning-fast multi-profile evaluation with concurrent parsing
+- **Excel Export**: Comprehensive Excel export with 68+ detailed fields for analysis
 
 > **🚀 For Power Users**: Run tests directly in terminal for **detailed logs, complete API responses, step-by-step processing**, and comprehensive debugging information not available in the web interface.
 
@@ -83,8 +83,10 @@ npm run client    # Frontend (http://localhost:3000)
 
 ### Web Interface (Recommended)
 1. Open http://localhost:3000
-2. Upload CV or enter LinkedIn profile
-3. View detailed evaluation results
+2. Choose between "Score CV/Profile" or "Get Top Researchers"
+3. For CV evaluation: Upload CV or enter LinkedIn profile
+4. For researcher search: Configure filters and search LinkedIn profiles
+5. View detailed evaluation results and export to Excel
 
 ### Terminal Testing (For Detailed Logs)
 ```bash
@@ -98,13 +100,12 @@ node tests/testLinkedInEvaluation.js parthapratimtalukdar
 npm run test-cv profiles/3.pdf
 npm run test-linkedin parthapratimtalukdar
 ```
+
 **Getting API Keys:**
 - **SerpAPI**: Sign up at [serpapi.com](https://serpapi.com) (Google Scholar + Patents)
 - **People Data Labs**: Get key at [peopledatalabs.com](https://www.peopledatalabs.com)
 - **GitHub**: Create token at [github.com/settings/tokens](https://github.com/settings/tokens)
 - **Gemini**: Get key at [ai.google.dev](https://ai.google.dev)
-
-### Configuration
 
 ## Running the Application
 
@@ -172,15 +173,6 @@ node tests/testParallelProfileSearch.js
 npm run test-parallel
 ```
 
-**Test QS Ranking Filters:**
-```bash
-# Test institute tier filtering (QS <300 vs QS >300)
-node tests/testQSRankingFilter.js
-
-# Or using npm script
-npm run test-qs-filter
-```
-
 **What You Get in Terminal:**
 - 🔍 **Detailed Parsing**: See exactly what data is extracted from each source
 - 📊 **API Responses**: Full responses from Google Scholar, GitHub, Patents APIs  
@@ -190,7 +182,6 @@ npm run test-qs-filter
 - 🔑 **API Status**: Real-time API key validation and usage stats
 - 📋 **Source Justification**: See which sources contributed to each data point and reliability scores
 - ⚡ **Performance Metrics**: Compare parallel vs sequential processing speeds
-- 🏫 **QS Ranking Analysis**: Institute tier filtering and university ranking insights
 
 ## ⚡ Parallel Processing Architecture
 
@@ -231,50 +222,6 @@ const { profileSearch } = require('./utils/profileSearch');
 const results = await profileSearch(filters, options);
 ```
 
-## 🏫 QS Ranking Institute Filtering
-
-The system includes **QS World University Rankings** integration for institute-based filtering:
-
-### **Institute Tiers:**
-- **🏆 Top Institute (QS <300)**: Universities ranked in top 300 globally
-- **🏛️ Other Institute (QS >300)**: Universities ranked 300+ or unranked
-
-### **Filter Examples:**
-```javascript
-// Filter for top-tier university PhD researchers in AI
-const filters = {
-  education: {
-    enabled: true,
-    degree: "PhD",
-    fieldOfStudy: "AI", 
-    instituteTier: "Top Institute (QS <300)"
-  }
-};
-
-// Filter for any university researchers in Computer Science
-const filters = {
-  education: {
-    enabled: true,
-    degree: "PhD",
-    fieldOfStudy: "Computer Science"
-    // No instituteTier = accept any university
-  }
-};
-
-// Filter specifically for lower-tier universities  
-const filters = {
-  education: {
-    enabled: true,
-    instituteTier: "Other Institute (QS >300)"
-  }
-};
-```
-
-### **Field Matching Logic:**
-- **"AI"** matches: Artificial Intelligence, Machine Learning, Deep Learning
-- **"Computer Science"** matches: Computer Science, CS, Software Engineering
-- **"Related Fields"** matches: Data Science, Robotics, Mathematics, Statistics
-
 ##  How It Works
 
 ### Evaluation Process
@@ -310,7 +257,7 @@ const filters = {
 
 ### Scoring Criteria
 
-- **Education (0-10)**: Degree level, institution tier, field relevance
+- **Education (0-10)**: Degree level, institution prestige, field relevance
 - **Publications (0-10)**: Count, citations, H-index, venue quality  
 - **Patents (0-10)**: Granted patents as first/co-inventor
 - **Work Experience (0-10)**: Top AI orgs, impact quality, mentorship
@@ -320,11 +267,29 @@ const filters = {
 
 ### Web Interface
 
-1. **CV Upload**: Drop PDF/DOC files for analysis
-2. **LinkedIn Profile**: Enter LinkedIn username or profile ID
-3. **Custom Weights**: Adjust scoring weights per your criteria
-4. **Score Breakdown**: View detailed justification for scores
+1. **Score CV/Profile Mode**:
+   - Upload CV files (PDF/DOC) for analysis
+   - Enter LinkedIn username or profile ID
+   - Adjust custom scoring weights
+   - View detailed score breakdown
 
+2. **Get Top Researchers Mode**:
+   - Configure education, publications, patents, work experience filters
+   - Search LinkedIn profiles with AI-powered analysis
+   - Export comprehensive results to Excel (68+ fields)
+   - Apply filters and download matching profiles
+
+### Excel Export Features
+
+The system generates comprehensive Excel exports with 68+ fields including:
+
+- **Basic Info**: Name, LinkedIn details, title, passed filters
+- **Education**: Degree, institute, field, scores
+- **Publications**: Count, citations, H-index, venue quality, research areas
+- **Patents**: First inventor, co-inventor, filed patents, scores
+- **GitHub**: Profile details, repository analysis, AI relevance
+- **Work Experience**: AI organizations, impact quality, frameworks, reasoning
+- **Scoring**: Raw scores, weighted scores, individual weights used
 
 ##  Development
 
@@ -335,14 +300,18 @@ server/
 ├── routes/
 │   ├── evaluation.js        # CV and LinkedIn evaluation endpoints
 │   ├── researchers.js       # Researcher data management
-│   └── scoring.js           # Scoring endpoints
+│   ├── profileSearch.js     # LinkedIn profile search endpoints
+│   └── cache.js             # Cache management endpoints
 ├── utils/
 │   ├── aiProfileParser.js   # Education and profile parsing
 │   ├── publicationsParser.js # Google Scholar integration
 │   ├── patentParser.js      # Patent search and analysis
 │   ├── githubParser.js      # GitHub profile analysis
 │   ├── workExperienceParser.js # Experience parsing
-│   └── scoringEngine.js     # Score calculation
+│   ├── scoringEngine.js     # Score calculation
+│   ├── profileSearch.js     # LinkedIn profile search logic
+│   ├── linkedinCache.js     # LinkedIn profile caching
+│   └── linkedinFormatter.js # LinkedIn data formatting
 └── tests/                   # Development test scripts
 ```
 
@@ -350,31 +319,45 @@ server/
 ```
 client/src/
 ├── components/              # React components
-│   ├── ProfileEvaluator.tsx # Main evaluation interface
-│   ├── FilterPanel.tsx     # Search filters
+│   ├── ModeSelector.tsx     # Mode selection interface
+│   ├── ProfileEvaluator.tsx # CV/LinkedIn evaluation interface
+│   ├── FilterPanel.tsx     # Search filters with Excel export
+│   ├── ProfileSearchResults.tsx # LinkedIn search results
 │   └── ResearcherList.tsx  # Results display
 ├── services/
 │   └── api.ts              # API service layer
 └── types/
-    └── index.ts            # TypeScript definitions
+    └index.ts            # TypeScript definitions
 ```
 
 ##  API Endpoints
 
 - `POST /api/evaluation/cv` - Evaluate uploaded CV file
 - `POST /api/evaluation/linkedin` - Evaluate LinkedIn profile
-- `GET /api/researchers` - Get all researchers with filters
+- `POST /api/profile-search/search` - Search LinkedIn profiles with filters
+- `GET /api/cache/stats` - Get LinkedIn cache statistics
+- `DELETE /api/cache/clear` - Clear LinkedIn profile cache
 - `POST /api/scoring/calculate` - Calculate scores with custom weights
 
 ##  Error Handling
 
 The system handles various error scenarios:
 
-- **Rate Limits**: Clear messages when API limits are exceeded
+- **Rate Limits**: Clear messages when API limits are exceeded with caching fallbacks
 - **Network Issues**: Graceful degradation and retry suggestions  
 - **Invalid Files**: Helpful error messages for unsupported formats
 - **Missing Data**: Fallback values when information isn't available
+- **API Failures**: Robust error handling with detailed logging
 
+## 🔧 Caching System
+
+The application includes intelligent caching for performance optimization:
+
+- **LinkedIn Profile Caching**: Stores profiles for 30 days to reduce API calls
+- **GitHub API Caching**: Caches GitHub profile data and repository analysis
+- **Publications Caching**: Stores Google Scholar search results
+- **Memory + File Caching**: Dual-layer caching for optimal performance
+- **Cache Management**: Built-in cache cleanup and statistics tracking
 
 ---
 
